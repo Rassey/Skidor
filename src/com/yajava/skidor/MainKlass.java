@@ -1,9 +1,11 @@
 package com.yajava.skidor;
 
+import com.yajava.lopp.Lopp;
+
 public class MainKlass {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Lopp start = new Lopp();
 
 	}
 
