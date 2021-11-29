@@ -12,6 +12,10 @@ public Akare(String fNamn, String eNamn, double tid, int startNr) {
 	this.tid = tid;
 	this.startNr = startNr;
 }
+@Override
+public String toString() {
+	return "Akare [fNamn=" + fNamn + ", eNamn=" + eNamn + ", tid=" + tid + ", startNr=" + startNr + "]";
+}
 public String getfNamn() {
 	return fNamn;
 }
