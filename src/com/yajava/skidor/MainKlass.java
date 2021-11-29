@@ -1,6 +1,7 @@
 package com.yajava.skidor;
 
 import com.yajava.lopp.Lopp;
+import com.yajava.meny.Huvudmeny;
 /*
  * Grundläggande kravApplikationen ska kunna användas i huvudsak vid längdskidtävlingar
  *  för att supporter/ledare ska kunna ta mellantider på åkare längs skidspåret.
@@ -20,6 +21,8 @@ public class MainKlass {
 	public static void main(String[] args) {
 		Lopp start = new Lopp();
 
+		Huvudmeny meny = new Huvudmeny();
+		
 	}
 
 }
