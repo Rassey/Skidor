@@ -5,11 +5,12 @@ import com.yajava.akare.Akare;
 public class PrintOut {
 
 	public void visaHuvudMeny() {
-		String text = "\n\t[1] Visa Startlistan"
-					+ "\n\t[2] Visa Resultatlistan"
-					+ "\n\t[3] Skriv ut mellantider"
-					+ "\n\t[4] Sokakare"
-					+ "\n\t[5] Avsluta"
+		String text = "\n\t[1] Registrera ny åkare"
+					+ "\n\t[2] Visa Startlistan"
+					+ "\n\t[3] Visa Resultatlistan"
+					+ "\n\t[4] Skriv ut mellantider"
+					+ "\n\t[5] Sokakare"
+					+ "\n\t[6] Avsluta"
 					+ "\nDitt val:";
 		System.out.println(text);
 	}
@@ -17,12 +18,12 @@ public class PrintOut {
 	public void visaStartListan(Akare[] akareList) {
 		// ett förslag (temp för att se hur det kan se ut)
 		System.out.println("Här kan vi skriva ut startlistan");
-		System.out.println("StartNummer" + "\t" + "Förnamn Efternamn" + "\tTid");
+		System.out.println("StartNummer" + "\t" + "Förnamn" + "\t\t" + "Efternamn" + "\tTid");
 		for(int i = 0; i < akareList.length; i++) {
 			String text = akareList[i].getStartNr() 
 						+ "\t\t" + akareList[i].getfNamn() 
-						+ "\t" + akareList[i].geteNamn() 
-						+ "\t\t" + akareList[i].getTid();
+						+ "\t\t" + akareList[i].geteNamn() 
+						+ "    \t" + akareList[i].getTid();
 			System.out.println(text);
 		}
 	}
