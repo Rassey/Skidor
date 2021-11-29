@@ -1,28 +1,26 @@
 package com.yajava.skidor;
 
-import com.yajava.lopp.Lopp;
-import com.yajava.meny.Huvudmeny;
+import java.util.Scanner;
 /*
- * Grundläggande kravApplikationen ska kunna användas i huvudsak vid längdskidtävlingar
- *  för att supporter/ledare ska kunna ta mellantider på åkare längs skidspåret.
+ * Grundlï¿½ggande kravApplikationen ska kunna anvï¿½ndas i huvudsak vid lï¿½ngdskidtï¿½vlingar
+ *  fï¿½r att supporter/ledare ska kunna ta mellantider pï¿½ ï¿½kare lï¿½ngs skidspï¿½ret.
  *  
- *  Längdskidtävlingar tävlas antingen med individuell start där varje åkare startar med 15 sek eller 30 sek mellanrum, 
- *  genom masstart (dvs. alla åkare samtidigt) eller såsom jaktstart där åkarna startar utifrån resultatet i en föregående tävling.
+ *  Lï¿½ngdskidtï¿½vlingar tï¿½vlas antingen med individuell start dï¿½r varje ï¿½kare startar med 15 sek eller 30 sek mellanrum, 
+ *  genom masstart (dvs. alla ï¿½kare samtidigt) eller sï¿½som jaktstart dï¿½r ï¿½karna startar utifrï¿½n resultatet i en fï¿½regï¿½ende tï¿½vling.
  *  
- *  I dess enklaste form ska applikationen kunna räkna fram mellantiden för ett visst åkarnummer vid den plats på spåret som ledaren står vid.
- *   Om t.ex. första start är kl 10:00 så behöver kunna räkna fram hur lång åktidsomstartnummer 1 som startade 10:00:00har, 
- *   startnummer 2 som startade 10:00:30 och startnummer 3 som startade 10:01:00 etc. har vid en viss plats på spåret.
- *    Om användaren matar in ett startnummer, så ska aktuell åktid samt placeringen i förhållande till de som hittills passerat.
+ *  I dess enklaste form ska applikationen kunna rï¿½kna fram mellantiden fï¿½r ett visst ï¿½karnummer vid den plats pï¿½ spï¿½ret som ledaren stï¿½r vid.
+ *   Om t.ex. fï¿½rsta start ï¿½r kl 10:00 sï¿½ behï¿½ver kunna rï¿½kna fram hur lï¿½ng ï¿½ktidsomstartnummer 1 som startade 10:00:00har, 
+ *   startnummer 2 som startade 10:00:30 och startnummer 3 som startade 10:01:00 etc. har vid en viss plats pï¿½ spï¿½ret.
+ *    Om anvï¿½ndaren matar in ett startnummer, sï¿½ ska aktuell ï¿½ktid samt placeringen i fï¿½rhï¿½llande till de som hittills passerat.
  *    
- *     Obs: Instruktionen är vag med flit eftersom ni förväntas utöva kravfångst genom att ställa följdfrågor till mig. 
+ *     Obs: Instruktionen ï¿½r vag med flit eftersom ni fï¿½rvï¿½ntas utï¿½va kravfï¿½ngst genom att stï¿½lla fï¿½ljdfrï¿½gor till mig. 
  */
 public class MainKlass {
-
+	
+	
+	
 	public static void main(String[] args) {
-		Lopp start = new Lopp();
-
-		Huvudmeny meny = new Huvudmeny();
-		
+		Logik logik = new Logik();
+		logik.Start();
 	}
-
 }
