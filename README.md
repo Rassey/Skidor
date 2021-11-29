@@ -1,5 +1,8 @@
 # Skidor
+![](https://ya.se/wp-content/uploads/2020/11/ya-logo-blue-bg.svg)
+
 Gruppuppgift med skidor och mellantid.
+<<<<<<< HEAD
 
 Hej 
 Här kommer lite svar. Det var högst relevanta frågor. Svaren visar vad som behöver vara med, men om ni sen vill bygga på med länder, klubbar mm, kan ni göra det när ni är klara.
@@ -53,3 +56,7 @@ Svar: Det behöver inte sparas. Datat lagras endast i minnet. Ni kan bygga ut med
 
 MVH
 Fredrik
+=======
+#### Teamet:
+[AlexanderEE](https://github.com/AlexanderEE95 "Alexander"), [Anna](https://github.com/Falafeln "Anna"), [Andreas](https://github.com/Rassey "Andreas"), [Mohamad](https://github.com/MohamadOjail "Mohamad")
+>>>>>>> branch 'main' of git@github.com:Rassey/Skidor.git
