@@ -3,4 +3,4 @@
 
 Gruppuppgift med skidor och mellantid.
 #### Teamet:
-[Alexander](https://github.com/AlexanderEE95 "Alexander"), [Anna](https://github.com/Falafeln "Anna"), [Andreas](https://github.com/Rassey "Andreas"), [Mohamad](https://github.com/MohamadOjail "Mohamad")
+[AlexanderEE](https://github.com/AlexanderEE95 "Alexander"), [Anna](https://github.com/Falafeln "Anna"), [Andreas](https://github.com/Rassey "Andreas"), [Mohamad](https://github.com/MohamadOjail "Mohamad")
