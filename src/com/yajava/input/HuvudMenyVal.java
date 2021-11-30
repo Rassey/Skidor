@@ -36,8 +36,8 @@ public class HuvudMenyVal {
 		return output;
 	}
 
-	// valet ska vara mellan 1 och 6
+	// valet ska vara mellan 1 och 7
 	private boolean isValid(int val) {
-		return (val > 0 && val < 7);
+		return (val > 0 && val < 8);
 	}
 }

@@ -11,6 +11,7 @@ public class PrintOut {
 					+ "\n\t[4] Skriv ut mellantider"
 					+ "\n\t[5] Sokakare"
 					+ "\n\t[6] Avsluta"
+					+ "\n\t[7] test kör efter meny 1 är klar"
 					+ "\nDitt val:";
 		System.out.println(text);
 	}
