@@ -19,9 +19,9 @@ public class AddNyAkare {
 		System.out.print("Ange efternamnet:");
 		String eNamn = sc.next();
 		System.out.print("Ange tid:");
-		double tid = sc.nextDouble();
+		double tid = inputSafety.inputDou(sc);
 		System.out.println("Ange startnummer:");
-		int startNummer = sc.nextInt();
+		int startNummer = inputSafety.inputInt(sc);
 		
 		nyAkare = new Akare(fNamn, eNamn, tid, startNummer);
 		

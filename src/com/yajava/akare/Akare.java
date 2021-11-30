@@ -34,4 +34,8 @@ public class Akare {
 	public int getStartNr() {
 		return startNr;
 	}
+
+	public void setStartNr(int startNr) {
+		this.startNr = startNr;
+	}
 }
