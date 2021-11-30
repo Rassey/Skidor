@@ -1,12 +1,12 @@
 package com.yajava.akare;
 
-public class Akare {
+public class Akare implements Comparable<Akare>{
 	private String fNamn;
 	private String eNamn;
 	private double tid;
 	private int startNr;
 
-	public Akare(String fNamn, String eNamn, double tid, int startNr) {
+	public Akare(String fNamn, String eNamn, double tid, int startNr){
 		super();
 		this.fNamn = fNamn;
 		this.eNamn = eNamn;
@@ -37,5 +37,11 @@ public class Akare {
 
 	public void setStartNr(int startNr) {
 		this.startNr = startNr;
+	}
+
+	@Override
+	public int compareTo(Akare o) {
+			
+		return this.startNr - o.startNr;
 	}
 }
