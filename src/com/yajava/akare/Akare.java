@@ -1,33 +1,24 @@
 package com.yajava.akare;
 
-public class Akare implements Comparable<Akare>{
-	private String fNamn;
-	private String eNamn;
-	private double tid;
+import java.time.LocalTime;
+
+public class Akare extends Person implements Comparable<Akare>{
+	
+	private LocalTime tid;
+	private LocalTime startTid;
+	private LocalTime slutTid;
 	private int startNr;
 
-	public Akare(String fNamn, String eNamn, double tid, int startNr){
-		super();
-		this.fNamn = fNamn;
-		this.eNamn = eNamn;
-		this.tid = tid;
-		this.startNr = startNr;
+	public Akare(String fNamn, String eNamn) {
+		super(fNamn, eNamn);
 	}
 
 	@Override
 	public String toString() {
-		return "Akare [fNamn=" + fNamn + ", eNamn=" + eNamn + ", tid=" + tid + ", startNr=" + startNr + "]";
+		return "Akare [fNamn=" + super.getfNamn() + ", eNamn=" + super.geteNamn() + ", tid=" + tid + ", startNr=" + startNr + "]";
 	}
 
-	public String getfNamn() {
-		return fNamn;
-	}
-
-	public String geteNamn() {
-		return eNamn;
-	}
-
-	public double getTid() {
+	public LocalTime getTid() {
 		return tid;
 	}
 
@@ -37,6 +28,26 @@ public class Akare implements Comparable<Akare>{
 
 	public void setStartNr(int startNr) {
 		this.startNr = startNr;
+	}
+
+	public LocalTime getStartTid() {
+		return startTid;
+	}
+
+	public void setStartTid(LocalTime startTid) {
+		this.startTid = startTid;
+	}
+
+	public LocalTime getSlutTid() {
+		return slutTid;
+	}
+
+	public void setSlutTid(LocalTime slutTid) {
+		this.slutTid = slutTid;
+	}
+
+	public void setTid(LocalTime tid) {
+		this.tid = tid;
 	}
 
 	@Override
