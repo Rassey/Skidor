@@ -42,9 +42,9 @@ public class Logik {
 				System.out.println("Hejdå");
 				exit = true;
 			}
-			case 7 ->{
+			case 7 -> {
 				startAkareListan = StartNummerLotto.randomNummer(startAkareListan);
-				for (int i = 0; i<startAkareListan.length; i++ ) {
+				for (int i = 0; i < startAkareListan.length; i++) {
 					System.out.println(startAkareListan[i].getStartNr());
 				}
 

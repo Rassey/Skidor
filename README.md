@@ -2,32 +2,31 @@
 ![](https://ya.se/wp-content/uploads/2020/11/ya-logo-blue-bg.svg)
 
 Gruppuppgift med skidor och mellantid.
-<<<<<<< HEAD
 
 Hej 
-Här kommer lite svar. Det var högst relevanta frågor. Svaren visar vad som behöver vara med, men om ni sen vill bygga på med länder, klubbar mm, kan ni göra det när ni är klara.
+Hï¿½r kommer lite svar. Det var hï¿½gst relevanta frï¿½gor. Svaren visar vad som behï¿½ver vara med, men om ni sen vill bygga pï¿½ med lï¿½nder, klubbar mm, kan ni gï¿½ra det nï¿½r ni ï¿½r klara.
 
-* ska stafett vara med eller är det endast vanlig längdskidåkning?
+* ska stafett vara med eller ï¿½r det endast vanlig lï¿½ngdskidï¿½kning?
 
-Svar: Endast vanlig tävling
+Svar: Endast vanlig tï¿½vling
 
-* ska det gå att söka efter damer/män/ungdom etc
+* ska det gï¿½ att sï¿½ka efter damer/mï¿½n/ungdom etc
 
-Svar: Det behövs inte. Vill man söka på en mellantid, så är det bara intressant mot övriga i klassen.
+Svar: Det behï¿½vs inte. Vill man sï¿½ka pï¿½ en mellantid, sï¿½ ï¿½r det bara intressant mot ï¿½vriga i klassen.
 
-* ska man få upp tabeller och kunna spara tidigare starter
+* ska man fï¿½ upp tabeller och kunna spara tidigare starter
 
-Svar: Bra är om man kan skriva ut (på skärmen) startlista och resultatlista
+Svar: Bra ï¿½r om man kan skriva ut (pï¿½ skï¿½rmen) startlista och resultatlista
 
-* vilka distanser gäller? Både för hela loppet samt mellantider
+* vilka distanser gï¿½ller? Bï¿½de fï¿½r hela loppet samt mellantider
 
-Svar: Distanser behövs inte för en enkel tidtagning.
+Svar: Distanser behï¿½vs inte fï¿½r en enkel tidtagning.
 
-* är det med km eller miles? 
+* ï¿½r det med km eller miles? 
 
-Svar: Behövs ej
+Svar: Behï¿½vs ej
 
-*Vilka personuppgifter på åkare ska finnas?
+*Vilka personuppgifter pï¿½ ï¿½kare ska finnas?
 
 -fnamn Ja
 
@@ -39,19 +38,19 @@ Svar: Behövs ej
 
 -startnummer Ja
 
--har en åkare alltid samma startnummer? Svar: Det är bra om man när man anmält åkare, kan göra en startnummer lottning. Man anger första start, intervall mellan åkare och första startnummer
+-har en ï¿½kare alltid samma startnummer? Svar: Det ï¿½r bra om man nï¿½r man anmï¿½lt ï¿½kare, kan gï¿½ra en startnummer lottning. Man anger fï¿½rsta start, intervall mellan ï¿½kare och fï¿½rsta startnummer
 
-* hur många lopp räknas in sedan tidigare? Är det endast senaste loppet som avgör eller kan det vara flera? Svar: Bara en tävling
+* hur mï¿½nga lopp rï¿½knas in sedan tidigare? ï¿½r det endast senaste loppet som avgï¿½r eller kan det vara flera? Svar: Bara en tï¿½vling
 
-* ska man kunna logga in för att använda tjänsten eller är det öppet för alla? Svar: Alla som kan starta programmet ska kunna köra det. Ingen web ska användas
+* ska man kunna logga in fï¿½r att anvï¿½nda tjï¿½nsten eller ï¿½r det ï¿½ppet fï¿½r alla? Svar: Alla som kan starta programmet ska kunna kï¿½ra det. Ingen web ska anvï¿½ndas
 
-* ska en tidsdifferens finnas för att jämföra vilken aktuell placering åkaren har och för tidsdiff mellan åkare?
+* ska en tidsdifferens finnas fï¿½r att jï¿½mfï¿½ra vilken aktuell placering ï¿½karen har och fï¿½r tidsdiff mellan ï¿½kare?
 
-Svar: Om användaren slår in ett startnummer för att kolla mellantid, ska placering av de som hittils passerat och tid efter ledaren visas.
+Svar: Om anvï¿½ndaren slï¿½r in ett startnummer fï¿½r att kolla mellantid, ska placering av de som hittils passerat och tid efter ledaren visas.
 
-* Hur ska allt sparas? Finns det något krav att det ska vara till en fil tillex. ?
+* Hur ska allt sparas? Finns det nï¿½got krav att det ska vara till en fil tillex. ?
 
-Svar: Det behöver inte sparas. Datat lagras endast i minnet. Ni kan bygga ut med lagring om ni är klara med övrigt.
+Svar: Det behï¿½ver inte sparas. Datat lagras endast i minnet. Ni kan bygga ut med lagring om ni ï¿½r klara med ï¿½vrigt.
 
 
 MVH
@@ -59,4 +58,4 @@ Fredrik
 =======
 #### Teamet:
 [AlexanderEE](https://github.com/AlexanderEE95 "Alexander"), [Anna](https://github.com/Falafeln "Anna"), [Andreas](https://github.com/Rassey "Andreas"), [Mohamad](https://github.com/MohamadOjail "Mohamad")
->>>>>>> branch 'main' of git@github.com:Rassey/Skidor.git
+

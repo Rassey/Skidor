@@ -11,7 +11,7 @@ public class HuvudMenyVal {
 	}
 
 	private Scanner sc;
-	
+
 	public int val() {
 		return getVal();
 	}
