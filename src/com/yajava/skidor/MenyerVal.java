@@ -48,20 +48,26 @@ public class MenyerVal {
 	public static void Meny3(Scanner s,Akare[] tempAkare) {
 		int temp;
 		boolean condition = true;
+		boolean lopStart = true;
 		do {
-			temp = InputSafety.inputInt(s);
-			if (temp < 2 && temp > 0) {
-				condition = true;
-			}else {
-				System.out.println("mata bara in 1-2 tack!");
-				condition = false;
-				s.nextLine();
-			}
+			do {
+				temp = InputSafety.inputInt(s);
+				if (temp <= 2 && temp > 0) {
+					condition = true;
+				} else {
+					System.out.println("mata bara in 1-2 tack!");
+					condition = false;
+					s.nextLine();
+				}
+
+			} while (!condition);
+			MenyerSwitchcases.meny3(s, tempAkare, temp);
 			if (temp == 2) {
-				condition = false;
+				lopStart = false;
 			}
-		} while (!condition);
-		MenyerSwitchcases.meny3(s, tempAkare, temp);
+			
+		} while (lopStart);
+
 	}
 
 	public static void Meny4() {

@@ -13,9 +13,7 @@ public static Akare[] randomNummer(Akare[] startNrLottning) {
 		do {
 			temp = rand.nextInt(99) + 1;
 			for (int j = 0; j < startNrLottning.length; j++) {
-				if (temp != startNrLottning[j].getStartNr()) {
-					condition = true;
-				} else {
+				if (temp == startNrLottning[j].getStartNr()) {
 					condition = false;
 				} 
 			}

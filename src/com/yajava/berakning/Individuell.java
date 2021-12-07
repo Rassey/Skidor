@@ -29,6 +29,19 @@ public class Individuell {
 
 		return output;
 	}
+	public static Akare[] individuellStartTest(Akare[] tempAkare) {
+		LocalTime startTime = LocalTime.of(0, 0, 0);
+		for(int i = 0 ; i < tempAkare.length; i++) {
+			if (i == 0) {
+				tempAkare[i].setStartTid(startTime);
+			}else {
+				startTime = startTime.plusSeconds(30);
+				tempAkare[i].setStartTid(startTime);
+			}
+		}
+		return tempAkare;
+
+	}
 
 	public void updateList(Akare[] akare) {
 

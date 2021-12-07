@@ -27,6 +27,18 @@ public class PrintOut {
 			System.out.println(text);
 		}
 	}
+	public static void visaStartListanTid(Akare[] akareList) {
+		// ett förslag (temp för att se hur det kan se ut)
+		System.out.println("Här kan vi skriva ut startlistan");
+		System.out.println("StartNummer" + "\t" + "Förnamn" + "\t\t" + "Efternamn" + "\t\t" + "Tid");
+		for(int i = 0; i < akareList.length; i++) {
+			String text = akareList[i].getStartNr() 
+						+ "\t\t" + akareList[i].getfNamn() 
+						+ "\t\t" + akareList[i].geteNamn()
+						+ "\t\t" + akareList[i].getStartTid();
+			System.out.println(text);
+		}
+	}
 	
 	public void visaResultatListan(Akare[] resultatList) {
 		for(int i = 0; i < resultatList.length; i++) {

@@ -1,5 +1,6 @@
 package com.yajava.skidor;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import com.yajava.Data.Startlista;
@@ -24,16 +25,20 @@ public class Logik {
 		startLista.initiateStartLista();
 		Akare[] startAkareListan = startLista.getStartLista();
 
-		boolean exit = false; // används för att kolla om användaren vill avsluta
-		
-		startAkareListan = Menyer.Meny1(sc, startAkareListan);
-		
-		startAkareListan = StartNummerLotto.randomNummer(startAkareListan);
-		
-		loppVal = Menyer.Meny2(sc);
-		
-		Menyer.Meny3(sc, startAkareListan);
 
+		
+		startAkareListan = Menyer.Meny1(sc, startAkareListan); // går in i meny 1
+		
+		startAkareListan = StartNummerLotto.randomNummer(startAkareListan); // lottar fram start nummer
+		Arrays.sort(startAkareListan);
+		
+		loppVal = Menyer.Meny2(sc); // går in i meny 2
+		
+		Menyer.Meny3(sc, startAkareListan); // går in i meny 3
+		
+		Lopp.startLopp(sc, startAkareListan, loppVal);
+
+//		boolean exit = false; // används för att kolla om användaren vill avsluta
 //		while (!exit) {
 //
 //			print.visaHuvudMeny(); // skriver ut menyn
