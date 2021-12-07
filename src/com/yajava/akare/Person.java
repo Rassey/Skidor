@@ -11,6 +11,8 @@ public class Person {
 		this.eNamn = eNamn;
 	}
 
+
+
 	public String getfNamn() {
 		return fNamn;
 	}

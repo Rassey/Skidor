@@ -2,7 +2,7 @@ package com.yajava.input;
 
 import java.util.Scanner;
 
-public class inputSafety {
+public class InputSafety {
 	public static int inputInt(Scanner s) {
 		int i = 0;
 		boolean condition = true;
