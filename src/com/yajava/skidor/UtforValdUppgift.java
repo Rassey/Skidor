@@ -7,8 +7,8 @@ import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
 
 
-public class MenyerSwitchcases {
-public static Akare[] Meny1(Scanner s, Akare[] tempAkare, int tempInt) {
+public class UtforValdUppgift {
+public static Akare[] startMenyfunktion(Scanner s, Akare[] tempAkare, int tempInt) {
 	
 	switch (tempInt) {
 	case 1 ->{
@@ -35,7 +35,7 @@ public static Akare[] Meny1(Scanner s, Akare[] tempAkare, int tempInt) {
 	}
 	return tempAkare;
 }
-public static void meny2(int tempInt) {
+public static void loppValUtskrifter(int tempInt) {
 	switch(tempInt) {
 	case 1 ->{
 		System.out.println("du har valt mass start");
@@ -48,7 +48,7 @@ public static void meny2(int tempInt) {
 	}
 	}
 }
-public static void meny3(Scanner s,Akare[] tempAkare, int tempInt) {
+public static void loppStartUtskrifter(Scanner s,Akare[] tempAkare, int tempInt) {
 	switch (tempInt) {
 	case 1 ->{
 		PrintOut.visaStartListan(tempAkare);

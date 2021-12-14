@@ -5,8 +5,8 @@ import java.util.Scanner;
 import com.yajava.akare.Akare;
 import com.yajava.input.InputSafety;
 
-public class MenyerVal {
-	public static Akare[] Meny1(Scanner s,Akare[] tempAkare) {
+public class ValfranMeny {
+	public static Akare[] startMenynVal(Scanner s,Akare[] tempAkare) {
 		int temp;
 		boolean condition = true;
 		boolean regKlar = true;
@@ -21,7 +21,7 @@ public class MenyerVal {
 					s.nextLine();
 				}
 			} while (!condition);
-			tempAkare = MenyerSwitchcases.Meny1(s, tempAkare, temp);
+			tempAkare = UtforValdUppgift.startMenyfunktion(s, tempAkare, temp);
 			if(temp == 3) {
 				regKlar = false;
 			}
@@ -29,7 +29,7 @@ public class MenyerVal {
 		return tempAkare;
 	}
 
-	public static int Meny2(Scanner s) {
+	public static int valFranLoppVal(Scanner s) {
 		int temp;
 		boolean condition = true;
 		do {
@@ -45,7 +45,7 @@ public class MenyerVal {
 		return temp;
 	}
 
-	public static void Meny3(Scanner s,Akare[] tempAkare) {
+	public static void valFranLoppStart(Scanner s,Akare[] tempAkare) {
 		int temp;
 		boolean condition = true;
 		boolean lopStart = true;
@@ -61,7 +61,7 @@ public class MenyerVal {
 				}
 
 			} while (!condition);
-			MenyerSwitchcases.meny3(s, tempAkare, temp);
+			UtforValdUppgift.loppStartUtskrifter(s, tempAkare, temp);
 			if (temp == 2) {
 				lopStart = false;
 			}

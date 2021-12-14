@@ -27,14 +27,14 @@ public class Logik {
 
 
 		
-		startAkareListan = Menyer.Meny1(sc, startAkareListan); // går in i meny 1
+		startAkareListan = UtskrifterMenyer.startMenyn(sc, startAkareListan); // går in i meny 1
 		
 		startAkareListan = StartNummerLotto.randomNummer(startAkareListan); // lottar fram start nummer
 		Arrays.sort(startAkareListan);
 		
-		loppVal = Menyer.Meny2(sc); // går in i meny 2
+		loppVal = UtskrifterMenyer.loppVal(sc); // går in i meny 2
 		
-		Menyer.Meny3(sc, startAkareListan); // går in i meny 3
+		UtskrifterMenyer.loppStart(sc, startAkareListan); // går in i meny 3
 		
 		Lopp.startLopp(sc, startAkareListan, loppVal);
 
