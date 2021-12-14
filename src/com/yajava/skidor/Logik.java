@@ -20,23 +20,26 @@ public class Logik {
 	private AddNyAkare addNyAkare = new AddNyAkare(sc);
 	private Startlista startLista = new Startlista();
 	private int loppVal;
+	private StartMenyLogik startMeny = new StartMenyLogik(sc);
+	private UtskrifterMenyer menyPrint = new UtskrifterMenyer();
 
 	public void Start() {
 		startLista.initiateStartLista();
 		Akare[] startAkareListan = startLista.getStartLista();
 
-
+		menyPrint.startMenyn();
+		startAkareListan = startMeny.startMeny(startAkareListan);
 		
-		startAkareListan = UtskrifterMenyer.startMenyn(sc, startAkareListan); // går in i meny 1
-		
-		startAkareListan = StartNummerLotto.randomNummer(startAkareListan); // lottar fram start nummer
-		Arrays.sort(startAkareListan);
-		
-		loppVal = UtskrifterMenyer.loppVal(sc); // går in i meny 2
-		
-		UtskrifterMenyer.loppStart(sc, startAkareListan); // går in i meny 3
-		
-		Lopp.startLopp(sc, startAkareListan, loppVal);
+//		startAkareListan = UtskrifterMenyer.startMenyn(sc, startAkareListan); // går in i meny 1
+//		
+//		startAkareListan = StartNummerLotto.randomNummer(startAkareListan); // lottar fram start nummer
+//		Arrays.sort(startAkareListan);
+//		
+//		loppVal = UtskrifterMenyer.loppVal(sc); // går in i meny 2
+//		
+//		UtskrifterMenyer.loppStart(sc, startAkareListan); // går in i meny 3
+//		
+//		Lopp.startLopp(sc, startAkareListan, loppVal);
 
 //		boolean exit = false; // används för att kolla om användaren vill avsluta
 //		while (!exit) {

@@ -12,14 +12,14 @@ public class UtskrifterMenyer {
 	 * @param tempAkare - temporar array med åkare för att ändra
 	 * @return - retunerar ändringar
 	 */
-	public static Akare[] startMenyn(Scanner s,Akare[] tempAkare) {
+	public void startMenyn() {
 		String meny1 = "\n\t[1] Registrera ny åkare" + 
 						"\n\t[2] Visa Startlistan" + 
 						"\n\t[3] Alla åkare är registrerade" +
 						"\n\t[4] EXIT";
 		System.out.println(meny1);
-		tempAkare = ValfranMeny.startMenynVal(s,tempAkare);
-		return tempAkare;
+//		tempAkare = ValfranMeny.startMenynVal(s,tempAkare);
+//		return tempAkare;
 	}
 
 	public static int loppVal(Scanner s) {
