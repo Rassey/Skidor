@@ -8,11 +8,11 @@ import com.yajava.akare.Akare;
 import com.yajava.input.InputSafety;
 
 public class StartMenyLogik {
-	private Scanner s;
+	private Scanner sc;
 
 	public StartMenyLogik(Scanner s) {
 		super();
-		this.s = s;
+		this.sc = s;
 	}
 
 	public Akare[] startMeny(Akare[] tempAkare) {
@@ -21,14 +21,15 @@ public class StartMenyLogik {
 		boolean condition = true;
 		boolean regKlar = true;
 		do {
+			UtskrifterMenyer.startMenyn();
 			do {
-				tempInt = InputSafety.inputInt(s);
+				tempInt = InputSafety.inputInt(sc);
 				if (tempInt <= 4 && tempInt > 0) {
 					condition = true;
 				} else {
 					System.out.println("mata bara in 1 - 4 tack!");
 					condition = false;
-					s.nextLine();
+					sc.nextLine();
 				}
 			} while (!condition);
 			if (tempInt == 3) {
@@ -38,9 +39,9 @@ public class StartMenyLogik {
 			switch (tempInt) {
 			case 1 -> {
 				System.out.print("Ange förnamnet:");
-				String fNamn = s.next();
+				String fNamn = sc.next();
 				System.out.print("Ange efternamnet:");
-				String eNamn = s.next();
+				String eNamn = sc.next();
 				Akare nyAkare = new Akare(fNamn, eNamn);
 
 				Akare[] tempArray = Arrays.copyOf(tempAkare, tempAkare.length);

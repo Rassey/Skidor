@@ -5,7 +5,7 @@ import java.util.Random;
 import com.yajava.akare.Akare;
 
 public class StartNummerLotto {
-public static Akare[] randomNummer(Akare[] startNrLottning) {
+public Akare[] geStartNummer(Akare[] startNrLottning) {
 	Random rand = new Random();
 	int temp = -10;
 	for (int i = 0; i < startNrLottning.length; i++) {

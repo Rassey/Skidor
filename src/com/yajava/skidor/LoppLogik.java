@@ -6,8 +6,14 @@ import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
 import com.yajava.berakning.Individuell;
 
-public class Lopp {
-	public static void startLopp(Scanner s, Akare [] tempAkare, int loppVal) {
+public class LoppLogik {
+	private Scanner sc;
+	public LoppLogik(Scanner sc) {
+		super();
+		this.sc = sc;
+	}
+	public Akare[] startLopp(Akare [] tempAkare, int loppVal) {
+		
 		switch (loppVal){
 		case 1 ->{
 			
@@ -20,5 +26,6 @@ public class Lopp {
 			
 		}
 		}
+		return tempAkare;
 	}
 }

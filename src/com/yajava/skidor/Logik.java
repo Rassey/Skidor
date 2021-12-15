@@ -19,27 +19,25 @@ public class Logik {
 	private HuvudMenyVal hMenyVal = new HuvudMenyVal(sc);
 	private AddNyAkare addNyAkare = new AddNyAkare(sc);
 	private Startlista startLista = new Startlista();
-	private int loppVal;
+	private int lopp;
 	private StartMenyLogik startMeny = new StartMenyLogik(sc);
-	private UtskrifterMenyer menyPrint = new UtskrifterMenyer();
+	private LoppValLogik loppVal = new LoppValLogik(sc);
+	private MenyInnanStartLogik menyVidStart = new MenyInnanStartLogik(sc);
+	private LoppLogik loppStart = new LoppLogik(sc);
+	private StartNummerLotto startNummerLotoo = new StartNummerLotto();
+//	private UtskrifterMenyer menyPrint = new UtskrifterMenyer();
 
 	public void Start() {
 		startLista.initiateStartLista();
 		Akare[] startAkareListan = startLista.getStartLista();
-
-		menyPrint.startMenyn();
-		startAkareListan = startMeny.startMeny(startAkareListan);
 		
-//		startAkareListan = UtskrifterMenyer.startMenyn(sc, startAkareListan); // går in i meny 1
-//		
-//		startAkareListan = StartNummerLotto.randomNummer(startAkareListan); // lottar fram start nummer
-//		Arrays.sort(startAkareListan);
-//		
-//		loppVal = UtskrifterMenyer.loppVal(sc); // går in i meny 2
-//		
-//		UtskrifterMenyer.loppStart(sc, startAkareListan); // går in i meny 3
-//		
-//		Lopp.startLopp(sc, startAkareListan, loppVal);
+
+		startAkareListan = startMeny.startMeny(startAkareListan);
+		lopp = loppVal.forstaLopp();
+		startAkareListan = startNummerLotoo.geStartNummer(startAkareListan);
+		Arrays.sort(startAkareListan);
+		menyVidStart.Innanstart(startAkareListan);
+		loppStart.startLopp(startAkareListan, lopp);
 
 //		boolean exit = false; // används för att kolla om användaren vill avsluta
 //		while (!exit) {
