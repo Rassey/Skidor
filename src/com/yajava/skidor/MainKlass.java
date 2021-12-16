@@ -1,6 +1,6 @@
 package com.yajava.skidor;
 
-import java.util.Scanner;
+
 /*
  * Grundl�ggande kravApplikationen ska kunna anv�ndas i huvudsak vid l�ngdskidt�vlingar
  *  f�r att supporter/ledare ska kunna ta mellantider p� �kare l�ngs skidsp�ret.
