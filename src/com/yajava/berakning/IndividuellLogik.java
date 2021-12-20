@@ -39,13 +39,14 @@ public class IndividuellLogik {
 	}
 	public void mellantid() {
 		call("Loppet har startat");
-		call("H√§r kommer dom till f√∂rsta mellantiden");
+		call("Vi har en Âkare som n‰rmar sig fˆrsta mellantiden");
 		
 	}
 	public void malgang() {
-		call("det √§r j√§mt efter mellantiden");
-		call("√Ökarna kommer mot m√•l");
+		
+		call("√Ökarna n‰rmar sig mÂllinjen");
 		call("det √§r j√§mt men vem kommer vinna");
+		
 	}
 
 	private void call(String text) {

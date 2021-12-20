@@ -28,10 +28,10 @@ public class LoppValLogik {
 		} while (!condition);
 		switch (val) {
 		case 1 -> {
-			System.out.println("du har valt mass start");
+			System.out.println("du har valt massstart");
 		}
 		case 2 -> {
-			System.out.println("du har valt individuel start");
+			System.out.println("du har valt individuell start");
 		}
 		}
 		return val;

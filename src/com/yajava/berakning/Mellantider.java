@@ -31,6 +31,7 @@ public class Mellantider {
 				LocalTime tempTid = npcMellanTider();
 				tempAkare[i].setMellanTid(tempTid);
 			}else {
+				loppMenyn(tempAkare);
 				System.out.println("Skriv in minuterna för mellantiden");
 				int tempMin = InputSafety.inputInt(sc);
 				System.out.println("Skriv in sekunderna för mellantiden");
@@ -47,6 +48,7 @@ public class Mellantider {
 				LocalTime tempTid = npcSlutTider();
 				tempAkare[i].setSlutTid(tempTid);
 			}else {
+				loppMenyn(tempAkare);
 				System.out.println("skriv in timmarna för sluttiden");
 				int tempTim = InputSafety.inputInt(sc);
 				System.out.println("Skriv in minuterna för sluttiden");
@@ -59,4 +61,23 @@ public class Mellantider {
 		}
 		return tempAkare;
 	}
+	public void loppMenyn(Akare[] startNr) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Vilken �kares vill du registrera? \n(s�k via startnr)");
+		int nummer;
+		nummer=sc.nextInt();
+		for (int i = 0; i < startNr.length; i++) {
+			
+			
+				
+				if (nummer == startNr[i].getStartNr()) {
+					
+					
+				} else {
+					
+				
+				}
+			
+	
+	}}
 }
