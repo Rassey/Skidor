@@ -9,6 +9,7 @@ import com.yajava.akare.Akare;
 import com.yajava.berakning.StartNummerLotto;
 import com.yajava.input.AddNyAkare;
 import com.yajava.input.HuvudMenyVal;
+import com.yajava.input.InputSafety;
 
 public class Logik {
 
@@ -25,6 +26,7 @@ public class Logik {
 	private MenyInnanStartLogik menyVidStart = new MenyInnanStartLogik(sc);
 	private LoppLogik loppStart = new LoppLogik(sc);
 	private StartNummerLotto startNummerLotoo = new StartNummerLotto();
+	private InputSafety inputSafe = new InputSafety();
 //	private UtskrifterMenyer menyPrint = new UtskrifterMenyer();
 
 	public void Start() {
@@ -36,7 +38,7 @@ public class Logik {
 		lopp = loppVal.forstaLopp();
 		startAkareListan = startNummerLotoo.geStartNummer(startAkareListan);
 		Arrays.sort(startAkareListan);
-		menyVidStart.Innanstart(startAkareListan);
+		menyVidStart.innanstart(startAkareListan);
 		loppStart.startLopp(startAkareListan, lopp);
 
 //		boolean exit = false; // används för att kolla om användaren vill avsluta

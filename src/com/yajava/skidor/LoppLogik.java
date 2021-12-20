@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
 import com.yajava.berakning.Individuell;
+import com.yajava.berakning.IndividuellLogik;
 
 public class LoppLogik {
 	private Scanner sc;
@@ -12,6 +13,8 @@ public class LoppLogik {
 		super();
 		this.sc = sc;
 	}
+	private IndividuellLogik individLogik = new IndividuellLogik(sc);
+	
 	public Akare[] startLopp(Akare [] tempAkare, int loppVal) {
 		
 		switch (loppVal){
@@ -19,8 +22,10 @@ public class LoppLogik {
 			
 		}
 		case 2 ->{
-			tempAkare = Individuell.individuellStartTest(tempAkare);
-			PrintOut.visaStartListanTid(tempAkare);
+			tempAkare = individLogik.startTider(tempAkare);
+			tempAkare = individLogik.loppStart(tempAkare);
+
+//			PrintOut.visaStartListanTid(tempAkare);
 		}
 		case 3 ->{
 			
@@ -28,4 +33,5 @@ public class LoppLogik {
 		}
 		return tempAkare;
 	}
+
 }

@@ -47,7 +47,7 @@ public class Individuell {
 
 		for (Akare akr : akare) {
 			akr.setSlutTid(tidBerakning.getFinishTime(akr));
-			akr.setTid(tidBerakning.calculateTiming(akr));
+			akr.setMellanTid(tidBerakning.calculateTiming(akr));
 		}
 	}
 }

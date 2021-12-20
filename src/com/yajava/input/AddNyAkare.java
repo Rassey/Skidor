@@ -23,7 +23,7 @@ public class AddNyAkare {
 //		System.out.println("Ange startnummer:");
 //		int startNummer = inputSafety.inputInt(sc);
 		
-		nyAkare = new Akare(fNamn, eNamn);
+		nyAkare = new Akare(fNamn, eNamn, false);
 		
 		Akare[] tempArray = Arrays.copyOf(startLista, startLista.length);
 		startLista = Arrays.copyOf(tempArray, tempArray.length + 1);

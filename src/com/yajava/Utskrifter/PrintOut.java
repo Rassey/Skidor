@@ -40,9 +40,15 @@ public class PrintOut {
 		}
 	}
 	
-	public void visaResultatListan(Akare[] resultatList) {
-		for(int i = 0; i < resultatList.length; i++) {
-			System.out.println("Här kan vi skriva ut resultatlistan");
+	public static void visaResultatListan(Akare[] resultatList) {
+		System.out.println("StartNummer" + "\t" + "Förnamn" + "\t\t" + "Efternamn" + "\t\t" + "mellantid" + "\t\t" + "sluttid");
+		for (int i = 0; i < resultatList.length; i++) {
+			String text = resultatList[i].getStartNr()
+					+ "\t\t" + resultatList[i].getfNamn()
+					+ "\t\t"+ resultatList[i].geteNamn()
+					+ "\t\t" + resultatList[i].getMellanTid()
+					+ "\t\t" + resultatList[i].getSlutTid();
+			System.out.println(text);
 		}
 	}
 	
