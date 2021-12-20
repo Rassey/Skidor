@@ -17,7 +17,7 @@ public class MenyInnanStartLogik {
 	 * 
 	 * @param tempAkare - Åkarelistan som matas med
 	 */
-	public void Innanstart(Akare[] tempAkare) {
+	public void innanstart(Akare[] tempAkare) {
 		int tempval;
 		boolean condition = true;
 		boolean lopStart = true;

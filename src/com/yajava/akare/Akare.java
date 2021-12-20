@@ -4,22 +4,32 @@ import java.time.LocalTime;
 
 public class Akare extends Person implements Comparable<Akare>{
 	
-	private LocalTime tid;
+	private LocalTime mellanTid;
 	private LocalTime startTid;
 	private LocalTime slutTid;
 	private int startNr;
+	private boolean npc;
 
-	public Akare(String fNamn, String eNamn) {
+	public boolean isNpc() {
+		return npc;
+	}
+
+	public void setNpc(boolean npc) {
+		this.npc = npc;
+	}
+
+	public Akare(String fNamn, String eNamn, boolean npc) {
 		super(fNamn, eNamn);
+		this.npc = npc;
 	}
 
 	@Override
 	public String toString() {
-		return "Akare [fNamn=" + super.getfNamn() + ", eNamn=" + super.geteNamn() + ", tid=" + tid + ", startNr=" + startNr + "]";
+		return "Akare [fNamn=" + super.getfNamn() + ", eNamn=" + super.geteNamn() + ", tid=" + mellanTid + ", startNr=" + startNr + "]";
 	}
 
-	public LocalTime getTid() {
-		return tid;
+	public LocalTime getMellanTid() {
+		return mellanTid;
 	}
 
 	public int getStartNr() {
@@ -46,8 +56,8 @@ public class Akare extends Person implements Comparable<Akare>{
 		this.slutTid = slutTid;
 	}
 
-	public void setTid(LocalTime tid) {
-		this.tid = tid;
+	public void setMellanTid(LocalTime tid) {
+		this.mellanTid = tid;
 	}
 
 	@Override

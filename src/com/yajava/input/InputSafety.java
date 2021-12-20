@@ -3,32 +3,33 @@ package com.yajava.input;
 import java.util.Scanner;
 
 public class InputSafety {
-	public static int inputInt(Scanner s) {
+
+	public static int inputInt(Scanner sc) {
 		int i = 0;
 		boolean condition = true;
 		do {
 			try {
-				i = s.nextInt();
+				i = sc.nextInt();
 				condition = true;
 			} catch (Exception e) {
 				System.out.println("fel inmatning");
 				condition = false;
-				s.nextLine();
+				sc.nextLine();
 			} 
 		} while (!condition);
 		return i;
 	}
-	public static double inputDou(Scanner s) {
+	public static double inputDou(Scanner sc) {
 		double i = 0;
 		boolean condition = true;
 		do {
 			try {
-				i = s.nextDouble();
+				i = sc.nextDouble();
 				condition = true;
 			} catch (Exception e) {
 				System.out.println("fel inmatning");
 				condition = false;
-				s.nextLine();
+				sc.nextLine();
 			} 
 		} while (!condition);
 		return i;
