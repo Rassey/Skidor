@@ -12,7 +12,12 @@ public class AddNyAkare {
 	public AddNyAkare(Scanner sc) {
 		this.sc = sc;
 	}
-	
+	/**
+	 * används inte för tillfället 
+	 * StartMenyLogik används istället
+	 * @param startLista
+	 * @return
+	 */
 	public Akare[] addNy(Akare[] startLista) {
 		System.out.print("Ange förnamnet:");
 		String fNamn = sc.next();

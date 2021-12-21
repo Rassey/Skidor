@@ -1,7 +1,9 @@
 package com.yajava.akare;
 
 public class Person {
-	
+	/**
+	 * håller koll på förnamn samt efternamn
+	 */
 	private String fNamn;
 	private String eNamn;
 	

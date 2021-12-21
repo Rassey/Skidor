@@ -15,7 +15,10 @@ public class PrintOut {
 					+ "\nDitt val:";
 		System.out.println(text);
 	}
-	
+	/**
+	 * skriver ut startlista med startnummer 
+	 * @param akareList - Array av aktuella åkare
+	 */
 	public static void visaStartListan(Akare[] akareList) {
 		// ett förslag (temp för att se hur det kan se ut)
 		System.out.println("Här kan vi skriva ut startlistan");
@@ -27,6 +30,10 @@ public class PrintOut {
 			System.out.println(text);
 		}
 	}
+	/**
+	 * skriver ut startlista med tid
+	 * @param akareList - Array av aktuella åkare
+	 */
 	public static void visaStartListanTid(Akare[] akareList) {
 		// ett förslag (temp för att se hur det kan se ut)
 		System.out.println("Här kan vi skriva ut startlistan");
@@ -39,7 +46,10 @@ public class PrintOut {
 			System.out.println(text);
 		}
 	}
-	
+	/**
+	 * skriver ut resultatet med all information
+	 * @param resultatList - Array av aktuella åkare
+	 */
 	public static void visaResultatListan(Akare[] resultatList) {
 		System.out.println("StartNummer" + "\t" + "Förnamn" + "\t\t" + "Efternamn" + "\t\t" + "mellantid" + "\t\t" + "sluttid");
 		for (int i = 0; i < resultatList.length; i++) {

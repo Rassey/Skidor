@@ -14,8 +14,8 @@ public class MenyInnanStartLogik {
 		this.sc = sc;
 	}
 	/**
-	 * 
-	 * @param tempAkare - Åkarelistan som matas med
+	 * Meny samt logik för meny innan lopp
+	 * @param tempAkare - Array av aktuella åkare
 	 */
 	public void innanstart(Akare[] tempAkare) {
 		int tempval;

@@ -5,7 +5,11 @@ import com.yajava.akare.Akare;
 public class Startlista {
 
 	private Akare[] startLista = new Akare[5];
-
+	
+	/**
+	 * Skapar NonPlayerCaracter åkare till startlistan
+	 */
+	
 	public void initiateStartLista() {
 		startLista[0] = new Akare("Jack", "Nilsson", true);
 		startLista[1] = new Akare("Emil", "Lundqvist", true);

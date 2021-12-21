@@ -14,7 +14,13 @@ public class StartMenyLogik {
 		super();
 		this.sc = s;
 	}
-
+	
+	/**
+	 * Meny samt Logik för startmenyn 
+	 * @param tempAkare - Array av aktuella Åkare
+	 * @return
+	 */
+	
 	public Akare[] startMeny(Akare[] tempAkare) {
 
 		int tempInt;
@@ -37,6 +43,9 @@ public class StartMenyLogik {
 			}
 
 			switch (tempInt) {
+			
+			// lägger till en åkare
+			
 			case 1 -> {
 				System.out.print("Ange förnamnet:");
 				String fNamn = sc.next();

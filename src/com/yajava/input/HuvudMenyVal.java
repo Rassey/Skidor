@@ -4,6 +4,10 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class HuvudMenyVal {
+	/**
+	 * används inte för tillfället - gammal kod
+	 * @param sc
+	 */
 
 	public HuvudMenyVal(Scanner sc) {
 		super();

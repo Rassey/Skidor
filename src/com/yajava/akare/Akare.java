@@ -3,11 +3,17 @@ package com.yajava.akare;
 import java.time.LocalTime;
 
 public class Akare extends Person implements Comparable<Akare>{
-	
+	/**
+	 * Håller kolla på mellanTid, starttid, sluttid samt startnummer
+	 * Stämpeldyan för åkare
+	 * 
+	 */
+
 	private LocalTime mellanTid;
 	private LocalTime startTid;
 	private LocalTime slutTid;
 	private int startNr;
+	// Npc = NonPlayerCaracter
 	private boolean npc;
 
 	public boolean isNpc() {

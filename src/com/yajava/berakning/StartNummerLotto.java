@@ -5,6 +5,11 @@ import java.util.Random;
 import com.yajava.akare.Akare;
 
 public class StartNummerLotto {
+	/**
+	 * Lottar ut startnummer för åkarna
+	 * @param startNrLottning - Array av dom aktuella åkarna
+	 * @return
+	 */
 public Akare[] geStartNummer(Akare[] startNrLottning) {
 	Random rand = new Random();
 	int temp = -10;

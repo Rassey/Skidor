@@ -12,7 +12,13 @@ public class LoppValLogik {
 		super();
 		this.sc = sc;
 	}
-
+	
+	/**
+	 * menyn samt logik för loppval
+	 * retuener en int
+	 * @return
+	 */
+	
 	public int forstaLopp() {
 		UtskrifterMenyer.forstaloppVal();
 		boolean condition = true;

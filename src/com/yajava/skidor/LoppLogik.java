@@ -15,6 +15,13 @@ public class LoppLogik {
 	}
 	private IndividuellLogik individLogik = new IndividuellLogik(sc);
 	
+	/**
+	 * starta dom olika loppen
+	 * @param tempAkare - array av aktuella åkare
+	 * @param loppVal - vilket lopp som man har valt
+	 * @return
+	 */
+	
 	public Akare[] startLopp(Akare [] tempAkare, int loppVal) {
 		
 		switch (loppVal){

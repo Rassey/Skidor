@@ -13,7 +13,11 @@ public class IndividuellLogik {
 		this.sc = sc;
 	}
 	private Mellantider mellantid = new Mellantider();
-	
+	/**
+	 * Logiken för Individuell lopp
+	 * @param tempAkare - Array av dom aktuella åkarna 
+	 * @return
+	 */
 	public Akare[] loppStart(Akare[] tempAkare) {
 		// meny för visa startlista innan mellantid (med sökning av åkare)
 		mellantid();
@@ -25,6 +29,11 @@ public class IndividuellLogik {
 		PrintOut.visaResultatListan(tempAkare);
 		return tempAkare;
 	}
+	/**
+	 * sätter starttiden för åkarna i startnummer ordning
+	 * @param tempAkare - Array av dom aktuella åkarna
+	 * @return
+	 */
 	public Akare[] startTider(Akare[] tempAkare) {
 		LocalTime startTime = LocalTime.of(0, 0, 0);
 		for(int i = 0 ; i < tempAkare.length; i++) {
@@ -39,16 +48,20 @@ public class IndividuellLogik {
 	}
 	public void mellantid() {
 		call("Loppet har startat");
-		call("Vi har en �kare som n�rmar sig f�rsta mellantiden");
+		call("Vi har en �kare som n�rmar sig f�rsta mellantiden");
 		
 	}
 	public void malgang() {
 		
-		call("Åkarna n�rmar sig m�llinjen");
+		call("Åkarna n�rmar sig m�llinjen");
 		call("det är jämt men vem kommer vinna");
 		
 	}
-
+	
+	/**
+	 * skriver ut loppets gång i en spännande ordning
+	 * @param text - text som matas in i call metoden
+	 */
 	private void call(String text) {
 		System.out.println();
 		StringBuilder sb = new StringBuilder();

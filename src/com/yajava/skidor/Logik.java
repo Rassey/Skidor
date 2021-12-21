@@ -29,16 +29,25 @@ public class Logik {
 	private InputSafety inputSafe = new InputSafety();
 //	private UtskrifterMenyer menyPrint = new UtskrifterMenyer();
 
+	/**
+	 * körning av programet
+	 */
+	
 	public void Start() {
 		startLista.initiateStartLista();
+		// skapar Array av Akare
 		Akare[] startAkareListan = startLista.getStartLista();
 		
-
+		// kör startmenyn
 		startAkareListan = startMeny.startMeny(startAkareListan);
 		lopp = loppVal.forstaLopp();
+		// lottar ut startnummer
 		startAkareListan = startNummerLotoo.geStartNummer(startAkareListan);
+		// sortera åkarna eftter startnummer
 		Arrays.sort(startAkareListan);
+		// kör menyn innan start
 		menyVidStart.innanstart(startAkareListan);
+		// starta loppet
 		loppStart.startLopp(startAkareListan, lopp);
 
 //		boolean exit = false; // används för att kolla om användaren vill avsluta
