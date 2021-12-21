@@ -47,33 +47,47 @@ public class IndividuellLogik {
 		return tempAkare;
 	}
 	public void mellantid() {
-		call("Loppet har startat");
-		call("Vi har en �kare som n�rmar sig f�rsta mellantiden");
-		
+		System.out.println();
+		call("", true);
+		call("\tLoppet har startat ",false);
+		call("\n\tVi har en åkare som närmar sig första mellantiden ",false);
 	}
 	public void malgang() {
 		
-		call("Åkarna n�rmar sig m�llinjen");
-		call("det är jämt men vem kommer vinna");
-		
+		call("\tÅkarna närmar sig mållinjen ",false);
+		call("\n\tdet är jämt men vem kommer vinna ",false);
+		call("", true);
+		System.out.println();
 	}
 	
 	/**
 	 * skriver ut loppets gång i en spännande ordning
 	 * @param text - text som matas in i call metoden
+	 * @throws InterruptedException 
 	 */
-	private void call(String text) {
-		System.out.println();
-		StringBuilder sb = new StringBuilder();
-		System.out.print(text);
-		for(int i = 0; i < 4 ; i++) {
-			sb.append('-');
-			System.out.print(sb);
-			try {
-				Thread.sleep(600);
-			} catch (Exception e) {
+	private void call(String text, boolean separator) {
+		if (separator) {
+			System.out.print("\t");
+			for(int i = 0; i < 70; i++) {
+				try {
+					Thread.sleep(20);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				System.out.print("-");
 			}
+			System.out.println();
+		} else {
+			System.out.print(text);
+			for (int i = 0; i < 5; i++) {
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				System.out.print(" ->");
+			}
+			System.out.println();
 		}
-		System.out.println("\n");
 	}
 }

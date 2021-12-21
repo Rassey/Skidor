@@ -1,5 +1,7 @@
 package com.yajava.Utskrifter;
 
+import java.util.Arrays;
+
 import com.yajava.akare.Akare;
 
 public class PrintOut {
@@ -51,6 +53,7 @@ public class PrintOut {
 	 * @param resultatList - Array av aktuella åkare
 	 */
 	public static void visaResultatListan(Akare[] resultatList) {
+		Arrays.sort(resultatList);
 		System.out.println("StartNummer" + "\t" + "Förnamn" + "\t\t" + "Efternamn" + "\t\t" + "mellantid" + "\t\t" + "sluttid");
 		for (int i = 0; i < resultatList.length; i++) {
 			String text = resultatList[i].getStartNr()
