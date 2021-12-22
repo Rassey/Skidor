@@ -91,7 +91,7 @@ public class IndividuellLogik {
 			
 			for (int i = 0; i < 5; i++) {
 				try {
-					Thread.sleep(800);
+					Thread.sleep(400);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
