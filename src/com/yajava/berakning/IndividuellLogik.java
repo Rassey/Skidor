@@ -80,16 +80,16 @@ public class IndividuellLogik {
 		} else {
 			//System.out.print(text);
 			
-			for(int i = 0; i<text.toCharArray().length;i++) {
+			for(int j = 0; j<text.toCharArray().length;j++) {
 				try {
-					Thread.sleep(100);
+					Thread.sleep(70);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				System.out.print(text.toCharArray()[i]);
+				System.out.print(text.toCharArray()[j]);
 			}
 			
-			for (int i = 0; i < 5; i++) {
+			for (int k = 0; k < 5; k++) {
 				try {
 					Thread.sleep(400);
 				} catch (InterruptedException e) {

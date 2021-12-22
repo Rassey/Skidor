@@ -56,17 +56,21 @@ public class PrintOut {
 	public static void visaResultatListan(Akare[] resultatList) {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 		Arrays.sort(resultatList);
-		System.out.println("StartNummer" + "\t" + "Förnamn" + "\t\t" + "Efternamn" + "\t\t" + "mellantid" + "\t\t" + "sluttid");
-		for(int i = 0; i < 90; i++) {
+		System.out.println(" [#]\t"+"StartNummer" + "\t" + "Förnamn" + "\t\t" + "Efternamn" + "\t\t" + "mellantid" + "\t\t" + "sluttid");
+		for(int i = 0; i < 97; i++) {
 			System.out.print('=');
 		}
 		System.out.println();
+		String winner = "Vinnare!";
 		for (int i = 0; i < resultatList.length; i++) {
-			String text = resultatList[i].getStartNr()
+			if( i != 0) winner ="";
+			String text = " " + (i + 1) + " "
+					+ "\t" + resultatList[i].getStartNr()
 					+ "\t\t" + resultatList[i].getfNamn()
 					+ "\t\t"+ resultatList[i].geteNamn()
 					+ "\t\t" + resultatList[i].getMellanTid().format(dtf)
-					+ "\t\t" + resultatList[i].getSlutTid().format(dtf);
+					+ "\t\t" + resultatList[i].getSlutTid().format(dtf)
+					+ "  " + winner;
 			System.out.println(text);
 		}
 	}
