@@ -70,18 +70,28 @@ public class IndividuellLogik {
 			System.out.print("\t");
 			for(int i = 0; i < 70; i++) {
 				try {
-					Thread.sleep(20);
+					Thread.sleep(10);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				System.out.print("-");
+				System.out.print('-');
 			}
 			System.out.println();
 		} else {
-			System.out.print(text);
+			//System.out.print(text);
+			
+			for(int i = 0; i<text.toCharArray().length;i++) {
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				System.out.print(text.toCharArray()[i]);
+			}
+			
 			for (int i = 0; i < 5; i++) {
 				try {
-					Thread.sleep(500);
+					Thread.sleep(800);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
