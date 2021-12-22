@@ -44,7 +44,7 @@ public class Logik {
 		// lottar ut startnummer
 		startAkareListan = startNummerLotoo.geStartNummer(startAkareListan);
 		// sortera åkarna eftter startnummer
-		Arrays.sort(startAkareListan);
+		//Arrays.sort(startAkareListan);
 		// kör menyn innan start
 		menyVidStart.innanstart(startAkareListan);
 		// starta loppet

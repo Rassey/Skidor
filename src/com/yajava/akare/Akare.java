@@ -1,6 +1,7 @@
 package com.yajava.akare;
 
 import java.time.LocalTime;
+import java.util.Objects;
 
 public class Akare extends Person implements Comparable<Akare>{
 	/**
@@ -67,8 +68,25 @@ public class Akare extends Person implements Comparable<Akare>{
 	}
 
 	@Override
-	public int compareTo(Akare o) {
-			
-		return this.startNr - o.startNr;
+	public int hashCode() {
+		return Objects.hash(slutTid, startNr);
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Akare other = (Akare) obj;
+		return Objects.equals(slutTid, other.slutTid) && startNr == other.startNr;
+	}
+
+	@Override
+	public int compareTo(Akare o) {
+		return this.slutTid.compareTo(o.slutTid);
+	}
+
 }

@@ -11,10 +11,10 @@ public class Startlista {
 	 */
 	
 	public void initiateStartLista() {
-		startLista[0] = new Akare("Jack", "Nilsson", true);
+		startLista[0] = new Akare("Jack", "Nilsson\t", true);
 		startLista[1] = new Akare("Emil", "Lundqvist", true);
 		startLista[2] = new Akare("Nils", "Magnusson", true);
-		startLista[3] = new Akare("Björn", "Ojail", true);
+		startLista[3] = new Akare("Björn", "Ojail\t", true);
 		startLista[4] = new Akare("Nicklas", "Rosenblad", true);
 	}
 

@@ -1,5 +1,8 @@
 package com.yajava.Utskrifter;
 
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+
 import com.yajava.akare.Akare;
 
 public class PrintOut {
@@ -51,13 +54,23 @@ public class PrintOut {
 	 * @param resultatList - Array av aktuella åkare
 	 */
 	public static void visaResultatListan(Akare[] resultatList) {
-		System.out.println("StartNummer" + "\t" + "Förnamn" + "\t\t" + "Efternamn" + "\t\t" + "mellantid" + "\t\t" + "sluttid");
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+		Arrays.sort(resultatList);
+		System.out.println(" [#]\t"+"StartNummer" + "\t" + "Förnamn" + "\t\t" + "Efternamn" + "\t\t" + "mellantid" + "\t\t" + "sluttid");
+		for(int i = 0; i < 97; i++) {
+			System.out.print('=');
+		}
+		System.out.println();
+		String winner = "Vinnare!";
 		for (int i = 0; i < resultatList.length; i++) {
-			String text = resultatList[i].getStartNr()
+			if( i != 0) winner ="";
+			String text = " " + (i + 1) + " "
+					+ "\t" + resultatList[i].getStartNr()
 					+ "\t\t" + resultatList[i].getfNamn()
 					+ "\t\t"+ resultatList[i].geteNamn()
-					+ "\t\t" + resultatList[i].getMellanTid()
-					+ "\t\t" + resultatList[i].getSlutTid();
+					+ "\t\t" + resultatList[i].getMellanTid().format(dtf)
+					+ "\t\t" + resultatList[i].getSlutTid().format(dtf)
+					+ "  " + winner;
 			System.out.println(text);
 		}
 	}
