@@ -4,11 +4,12 @@ import com.yajava.akare.Akare;
 
 public class Startlista {
 
-	private Akare[] startLista = new Akare[5];
+	private Akare[] startLista;
 	
 	 // Skapar åkare till startlistan
 	
 	private void initiateStartLista() {
+		startLista = new Akare[5];
 		startLista[0] = new Akare("Jack", "Nilsson");
 		startLista[1] = new Akare("Emil", "Lundqvist");
 		startLista[2] = new Akare("Nils", "Magnusson");
