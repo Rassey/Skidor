@@ -10,6 +10,7 @@ import com.yajava.akare.Akare;
 
 public class PrintOut {
 	
+	static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 	static char ae = 228;
 	static char ao = 229;
 	static char o = 246;
@@ -50,7 +51,6 @@ public class PrintOut {
 		System.out.println();
 		
 		Arrays.sort(resultatList);
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 		
 		for (int i = 0; i < resultatList.length; i++) {
 			String text = " " + resultatList[i].getStartNr()
@@ -61,7 +61,7 @@ public class PrintOut {
 			System.out.println(text);
 		}
 		
-		printSortedSluttid(resultatList);
+		printSortedSluttid(resultatList);  // sortera listan efter sluttiden
 	}
 	
 	private static void printSortedSluttid(Akare[] resultatList) {
@@ -83,8 +83,6 @@ public class PrintOut {
                 return e1.getSlutTid().compareTo(e2.getSlutTid());
             }
         });
-		
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 		
 		asList.forEach(x ->{
 			String vn = "";
