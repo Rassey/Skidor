@@ -6,14 +6,18 @@ import java.util.Arrays;
 import com.yajava.akare.Akare;
 
 public class PrintOut {
-
+	
+	static char ae = 228;
+	static char ao = 229;
+	static char o = 246;
+	
 	/**
 	 * skriver ut startlista med startnummer 
 	 * @param akareList - Array av aktuella åkare
 	 */
 	public static void visaStartListan(Akare[] akareList) {
 		
-		System.out.println("StartNummer" + "\t" + "Förnamn" + "\t\t" + "Efternamn");
+		System.out.println("StartNummer" + "\t" + "F" + o + "rnamn" + "\t\t" + "Efternamn");
 		
 		for(int j = 0; j < 42; j++) {
 			System.out.print('=');
@@ -33,7 +37,7 @@ public class PrintOut {
 	 */
 	public static void visaResultatListan(Akare[] resultatList) {
 		
-		System.out.println("StartNummer" + "\t" + "Förnamn" 
+		System.out.println("StartNummer" + "\t" + "F" + o + "rnamn" 
 							+ "\t\t\t" + "Efternamn" + "\t\t" 
 							+ "mellantid" + "\t\t" + "sluttid");
 		
@@ -62,7 +66,8 @@ public class PrintOut {
 	}
 	
 	public static void welcome() {
-		String text = "Valkommen till langdskidtavling";
+		
+		String text = "V" +ae+ "lkommen till l" + ae + "ngdskidt" + ae + "vling";
 		System.out.print("\n\t");
 		for(int i = 0; i < text.length(); i++) {
 			System.out.print(text.toCharArray()[i]);

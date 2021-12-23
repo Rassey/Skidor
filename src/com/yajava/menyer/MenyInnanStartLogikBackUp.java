@@ -19,6 +19,8 @@ public class MenyInnanStartLogikBackUp {
 	 * @param tempAkare - Array av aktuella åkare
 	 */
 	public void innanstart(Akare[] tempAkare) {
+		
+		char o = 246, ae = 228;
 		int val;
 		boolean condition = true;
 		boolean lopStart = true;
@@ -41,7 +43,7 @@ public class MenyInnanStartLogikBackUp {
 			}
 				switch (val) {
 				case 1 -> PrintOut.visaStartListan(tempAkare);
-				case 2 -> System.out.println("\n\ttävlingen starta snart, gör er redo!");
+				case 2 -> System.out.println("\n\tt" + ae + "vlingen starta snart, g" + o + "r er redo!");
 				}
 		} while (lopStart);
 	}

@@ -2,14 +2,9 @@ package com.yajava.berakning;
 
 import java.time.LocalTime;
 import java.util.Random;
-import java.util.Scanner;
-
 import com.yajava.akare.Akare;
-import com.yajava.input.InputSafety;
 
 public class Mellantider {
-	
-	private Scanner sc = new Scanner(System.in);
 	
 	private LocalTime npcMellanTider() {
 		Random rnd = new Random();

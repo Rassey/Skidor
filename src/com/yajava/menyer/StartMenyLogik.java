@@ -9,6 +9,8 @@ import com.yajava.akare.Akare;
 import com.yajava.input.InputSafety;
 
 public class StartMenyLogik {
+	
+	static char ae = 228, ao = 229, o = 246;
 	private Scanner sc;
 
 	public StartMenyLogik(Scanner s) {
@@ -40,7 +42,7 @@ public class StartMenyLogik {
 			switch (val) {
 				case 1 -> akarLista = nyAkare(akarLista); // Registrera ny åkare
 				case 2 -> PrintOut.visaStartListan(akarLista); // Visa aktuell startlista
-				case 3 -> System.out.println("Alla åkare är registrerade, gör er redo för start"); // Markera registreringstid som
+				case 3 -> System.out.println("Alla " + ao + "kare " + ae + "r registrerade, g" + o + "r er redo f" + o + "r start"); // Markera registreringstid som
 				case 4 -> System.exit(0);
 			}
 			regKlar = val == 3 ? true : false;
@@ -49,7 +51,7 @@ public class StartMenyLogik {
 	}
 
 	private Akare[] nyAkare(Akare[] akarLista) {
-		System.out.print("Ange förnamnet:");
+		System.out.print("Ange f" + o + "rnamnet:");
 		String fNamn = sc.next();
 		System.out.print("Ange efternamnet:");
 		String eNamn = sc.next();
@@ -58,7 +60,7 @@ public class StartMenyLogik {
 		Akare[] tempArray = Arrays.copyOf(akarLista, akarLista.length);
 		akarLista = Arrays.copyOf(tempArray, tempArray.length + 1);
 		akarLista[akarLista.length - 1] = nyAkare;
-		System.out.println("\n\tEn ny akare är nu registrerad.");
+		System.out.println("\n\tEn ny " + ao + "kare " + ae + "r nu registrerad.");
 		System.out.println("\t``````````````````````````````");
 		return akarLista;
 	}

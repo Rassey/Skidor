@@ -5,7 +5,12 @@ import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
 
 public class IndividuellLogik {
-
+	
+	static char ae = 228;
+	static char ao = 229;
+	static char o = 246;
+	static char aO = 197;
+	
 	private Mellantider mellantid = new Mellantider();
 
 	/**
@@ -49,13 +54,13 @@ public class IndividuellLogik {
 	public void mellantid() {
 		call("", true);
 		call("\tLoppet har startat ", false);
-		call("\n\tVi har en åkare som närmar sig första mellantiden ", false);
+		call("\n\tVi har en " + ao + "kare som n" + ae + "rmar sig f" + o + "rsta mellantiden ", false);
 	}
 
 	public void malgang() {
 
-		call("\tÅkarna närmar sig mållinjen ", false);
-		call("\n\tdet är jämt men vem kommer vinna ", false);
+		call("\t" + aO + "karna n" + ae + "rmar sig m" + ao + "llinjen ", false);
+		call("\n\tdet " + ae + "r j" + ae + "mt men vem kommer vinna ", false);
 		call("", true);
 		System.out.println();
 	}
