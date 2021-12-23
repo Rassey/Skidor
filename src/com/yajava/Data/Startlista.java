@@ -6,19 +6,18 @@ public class Startlista {
 
 	private Akare[] startLista = new Akare[5];
 	
-	/**
-	 * Skapar NonPlayerCaracter åkare till startlistan
-	 */
+	 // Skapar åkare till startlistan
 	
-	public void initiateStartLista() {
-		startLista[0] = new Akare("Jack", "Nilsson\t", true);
-		startLista[1] = new Akare("Emil", "Lundqvist", true);
-		startLista[2] = new Akare("Nils", "Magnusson", true);
-		startLista[3] = new Akare("Björn", "Ojail\t", true);
-		startLista[4] = new Akare("Nicklas", "Rosenblad", true);
+	private void initiateStartLista() {
+		startLista[0] = new Akare("Jack", "Nilsson");
+		startLista[1] = new Akare("Emil", "Lundqvist");
+		startLista[2] = new Akare("Nils", "Magnusson");
+		startLista[3] = new Akare("Björn", "Ojail");
+		startLista[4] = new Akare("Nicklas", "Rosenblad");
 	}
 
 	public Akare[] getStartLista() {
+		initiateStartLista();
 		return startLista;
 	}
 

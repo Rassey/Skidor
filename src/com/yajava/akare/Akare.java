@@ -3,32 +3,20 @@ package com.yajava.akare;
 import java.time.LocalTime;
 import java.util.Objects;
 
-public class Akare extends Person implements Comparable<Akare>{
-	/**
+/**
 	 * Håller kolla på mellanTid, starttid, sluttid samt startnummer
 	 * Stämpeldyan för åkare
-	 * 
 	 */
+public class Akare extends Person implements Comparable<Akare>{
 
+	public Akare(String fNamn, String eNamn) {
+		super(fNamn, eNamn);
+	}
+	
 	private LocalTime mellanTid;
 	private LocalTime startTid;
 	private LocalTime slutTid;
 	private int startNr;
-	// Npc = NonPlayerCaracter
-	private boolean npc;
-
-	public boolean isNpc() {
-		return npc;
-	}
-
-	public void setNpc(boolean npc) {
-		this.npc = npc;
-	}
-
-	public Akare(String fNamn, String eNamn, boolean npc) {
-		super(fNamn, eNamn);
-		this.npc = npc;
-	}
 
 	@Override
 	public String toString() {
@@ -67,6 +55,7 @@ public class Akare extends Person implements Comparable<Akare>{
 		this.mellanTid = tid;
 	}
 
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(slutTid, startNr);
@@ -86,7 +75,27 @@ public class Akare extends Person implements Comparable<Akare>{
 
 	@Override
 	public int compareTo(Akare o) {
-		return this.slutTid.compareTo(o.slutTid);
+		if(this.startNr == o.startNr) {
+			return 0;
+		}else if (this.startNr > o.startNr) {
+			return 1;
+		}else {
+			return -1;
+		}
 	}
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

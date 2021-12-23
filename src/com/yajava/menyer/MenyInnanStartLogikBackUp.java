@@ -1,15 +1,16 @@
-package com.yajava.skidor;
+package com.yajava.menyer;
 
 import java.util.Scanner;
 
 import com.yajava.Utskrifter.PrintOut;
+import com.yajava.Utskrifter.MenyerSkrivare;
 import com.yajava.akare.Akare;
 import com.yajava.input.InputSafety;
 
-public class MenyInnanStartLogik {
+public class MenyInnanStartLogikBackUp {
 	private Scanner sc;
 
-	public MenyInnanStartLogik(Scanner sc) {
+	public MenyInnanStartLogikBackUp(Scanner sc) {
 		super();
 		this.sc = sc;
 	}
@@ -18,14 +19,15 @@ public class MenyInnanStartLogik {
 	 * @param tempAkare - Array av aktuella åkare
 	 */
 	public void innanstart(Akare[] tempAkare) {
-		int tempval;
+		int val;
 		boolean condition = true;
 		boolean lopStart = true;
+		
 		do {
-			UtskrifterMenyer.loppStart();
+			MenyerSkrivare.loppStart();
 			do {
-				tempval = InputSafety.inputInt(sc);
-				if (tempval <= 2 && tempval > 0) {
+				val = InputSafety.inputInt(sc);
+				if (val <= 2 && val > 0) {
 					condition = true;
 				} else {
 					System.out.println("mata bara in 1-2 tack!");
@@ -34,19 +36,13 @@ public class MenyInnanStartLogik {
 				}
 
 			} while (!condition);
-			if (tempval == 2) {
+			if (val == 2) {
 				lopStart = false;
 			}
-				switch (tempval) {
-				case 1 ->{
-					PrintOut.visaStartListan(tempAkare);
+				switch (val) {
+				case 1 -> PrintOut.visaStartListan(tempAkare);
+				case 2 -> System.out.println("\n\ttävlingen starta snart, gör er redo!");
 				}
-				case 2 ->{
-					System.out.println("tävlingen starta snart, gör er redo!");
-				}
-				}
-			
-			
 		} while (lopStart);
 	}
 }
