@@ -19,7 +19,7 @@ public class LoppLogik {
 		
 		switch (loppVal) {
 			case 1 -> {
-				System.out.println("MassStart logiken inte implementarat än");
+				System.out.println("MassStart - next version feature");
 				}
 			case 2 -> {
 				individLogik.startTider(akarListan);

@@ -60,5 +60,29 @@ public class PrintOut {
 		if(text.length() <= 7) text = text + "\t";
 		return text;
 	}
+	
+	public static void welcome() {
+		String text = "Valkommen till langdskidtavling";
+		System.out.print("\n\t");
+		for(int i = 0; i < text.length(); i++) {
+			System.out.print(text.toCharArray()[i]);
+			try {
+				Thread.sleep(60);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println();
+		System.out.print('\t');
+		for(int i = 0; i < text.length(); i++) {
+			System.out.print('=');
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println();
+	}
 }
 

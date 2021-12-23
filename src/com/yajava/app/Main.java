@@ -3,6 +3,7 @@ package com.yajava.app;
 import java.util.Scanner;
 
 import com.yajava.Data.Startlista;
+import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
 import com.yajava.berakning.StartNummerLotto;
 import com.yajava.lopp.LoppLogik;
@@ -13,8 +14,11 @@ import com.yajava.menyer.StartMenyLogik;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		PrintOut.welcome();
+		
 		Scanner sc = new Scanner(System.in);
-
+		
 		Startlista startLista = new Startlista();
 		StartMenyLogik startMeny = new StartMenyLogik(sc);
 
