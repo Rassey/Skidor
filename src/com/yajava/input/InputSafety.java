@@ -23,24 +23,4 @@ public class InputSafety {
 		} while (!condition);
 		return i;
 	}
-	/**
-	 * felhantering vid dubble inmatning
-	 * @param sc - Scanner
-	 * @return
-	 */
-	public static double inputDou(Scanner sc) {
-		double i = 0;
-		boolean condition = true;
-		do {
-			try {
-				i = sc.nextDouble();
-				condition = true;
-			} catch (Exception e) {
-				System.out.println("fel inmatning");
-				condition = false;
-				sc.nextLine();
-			} 
-		} while (!condition);
-		return i;
-	}
 }
