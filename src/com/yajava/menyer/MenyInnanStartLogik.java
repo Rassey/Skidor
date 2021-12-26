@@ -1,5 +1,6 @@
 package com.yajava.menyer;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.yajava.Utskrifter.PrintOut;
@@ -13,7 +14,7 @@ public class MenyInnanStartLogik {
 	 * Meny samt logik för meny innan lopp
 	 * @param tempAkare - Array av aktuella åkare
 	 */
-	public static void innanstart(Akare[] tempAkare, Scanner sc) {
+	public static void innanstart(List<Akare> akarListan, Scanner sc) {
 		
 		char o = 246, ae = 228;
 		int val = 0;
@@ -34,7 +35,7 @@ public class MenyInnanStartLogik {
 			}
 
 			switch (val) {
-			case 1 -> PrintOut.visaStartListan(tempAkare);
+			case 1 -> PrintOut.visaStartListan(akarListan);
 			case 2 -> System.out.println("\n\tt" + ae + "vlingen starta snart, g" + o + "r er redo!");
 			case 3 -> System.exit(0);
 			}

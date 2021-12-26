@@ -1,5 +1,7 @@
 package com.yajava.lopp;
 
+import java.util.List;
+
 import com.yajava.akare.Akare;
 import com.yajava.berakning.IndividuellLogik;
 
@@ -13,17 +15,15 @@ public class LoppLogik {
 	 * @return
 	 */
 
-	public static void startLopp(Akare[] akarListan, int loppVal) {
-		
-		IndividuellLogik individLogik = new IndividuellLogik();
+	public static void startLopp(List<Akare> akarListan, int loppVal) {
 		
 		switch (loppVal) {
 			case 1 -> {
 				System.out.println("MassStart - next version feature");
 				}
 			case 2 -> {
-				individLogik.startTider(akarListan);
-				individLogik.loppStart(akarListan);
+				IndividuellLogik.generateStartTider(akarListan);
+				IndividuellLogik.loppStart(akarListan);
 				}
 		}
 	}
