@@ -25,7 +25,7 @@ public class PrintOut {
 	 * @param resultatList - Array av aktuella åkare
 	 */
 	public static void visaResultatListan(List<Akare> akarListan) {
-		System.out.println("\n\t\tSorted acordning to start number\n");
+		System.out.println("\nSorted acordning to start number\n---------------------------------------");
 		OtherPrintOut.printHeader();
 		Collections.sort(akarListan);
 		akarListan.forEach(akara -> System.out.println(akara));
@@ -34,7 +34,7 @@ public class PrintOut {
 	}
 	
 	private static void printSortedSluttid(List<Akare> akarListan) {
-		System.out.println("\n\tSorterad efter sluttis\n\t----------------------");
+		System.out.println("\nSorterad efter sluttid\n----------------------");
 		OtherPrintOut.printHeader();
 		
 		Collections.sort(akarListan, new Comparator<Akare>(){

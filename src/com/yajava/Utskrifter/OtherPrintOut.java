@@ -7,7 +7,7 @@ public class OtherPrintOut {
 	public static void printRegistrerade() {
 		System.out.println("Alla " + ao + "kare " + ae 
 						 + "r registrerade, g" + o + "r er redo f" 
-						 + o + "r start");
+						 + o + "r start\n");
 	}
 	
 	public static void printNyAkareRegged() {
@@ -46,7 +46,7 @@ public class OtherPrintOut {
 
 			for (int j = 0; j < text.toCharArray().length; j++) {
 				try {
-					Thread.sleep(0);
+					Thread.sleep(30);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -55,7 +55,7 @@ public class OtherPrintOut {
 
 			for (int k = 0; k < 5; k++) {
 				try {
-					Thread.sleep(0);
+					Thread.sleep(180);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
