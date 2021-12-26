@@ -1,6 +1,7 @@
 package com.yajava.akare;
 
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 /**
@@ -11,16 +12,31 @@ public class Akare extends Person implements Comparable<Akare>{
 
 	public Akare(String fNamn, String eNamn) {
 		super(fNamn, eNamn);
+		dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 	}
 	
+	private DateTimeFormatter dtf;
 	private LocalTime mellanTid;
 	private LocalTime startTid;
 	private LocalTime slutTid;
 	private int startNr;
-
+	
 	@Override
 	public String toString() {
-		return "Akare [fNamn=" + super.getfNamn() + ", eNamn=" + super.geteNamn() + ", tid=" + mellanTid + ", startNr=" + startNr + "]";
+		return startNr 
+				+ "\t\t" + getFormatedName(super.getfNamn()) 
+				+ "\t\t" + getFormatedName(super.geteNamn()) 
+				+ "\t\t" + getFormatedTime(startTid) 
+				+ "\t\t" + getFormatedTime(mellanTid)
+				+ "\t\t" + getFormatedTime(slutTid);
+	}
+	
+	private String getFormatedTime(LocalTime time) {
+		return time == null ? "--:--:--" : time.format(dtf);
+	}
+	
+	private static String getFormatedName(String text) {
+		return text.length() <= 7 ? text + "\t" : text;
 	}
 
 	public LocalTime getMellanTid() {

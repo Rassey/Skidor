@@ -1,28 +1,16 @@
 package com.yajava.Data;
 
+import java.util.List;
 import com.yajava.akare.Akare;
 
 public class Startlista {
-
-	private Akare[] startLista;
 	
 	 // Skapar åkare till startlistan
-	
-	private void initiateStartLista() {
-		startLista = new Akare[5];
-		startLista[0] = new Akare("Jack", "Nilsson");
-		startLista[1] = new Akare("Emil", "Lundqvist");
-		startLista[2] = new Akare("Nils", "Magnusson");
-		startLista[3] = new Akare("Björn", "Ojail");
-		startLista[4] = new Akare("Nicklas", "Rosenblad");
-	}
-
-	public Akare[] getStartLista() {
-		initiateStartLista();
-		return startLista;
-	}
-
-	public void setStartLista(Akare[] startLista) {
-		this.startLista = startLista;
+	public static void initiateStartLista(List<Akare> arakeLista) {
+		arakeLista.add(new Akare("Jack", "Nilsson"));
+		arakeLista.add(new Akare("Emil", "Lundqvist"));
+		arakeLista.add(new Akare("Nils", "Magnusson"));
+		arakeLista.add(new Akare("Björn", "Ojail"));
+		arakeLista.add(new Akare("Nicklas", "Rosenblad"));
 	}
 }
