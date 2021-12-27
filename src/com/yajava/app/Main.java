@@ -1,10 +1,8 @@
 package com.yajava.app;
 
-import java.util.List;
 import java.util.Scanner;
 import com.yajava.Data.AkarList;
 import com.yajava.Utskrifter.PrintOut;
-import com.yajava.akare.Akare;
 import com.yajava.berakning.StartNummerLotto;
 import com.yajava.lopp.LoppLogik;
 import com.yajava.lopp.LoppValLogik;
@@ -17,17 +15,16 @@ public class Main {
 		
 		AkarList akarList = new AkarList();
 		Scanner sc = new Scanner(System.in);
-		List<Akare> akarListan = akarList.getArakeLista();		// skapar List av Akare
-		akarList.laggTillDummyData(akarListan);					// initiera akarListan
+		akarList.laggTillDummyData(akarList.getArakeLista());					// initiera akarListan
 		
 		PrintOut.welcome();
-		StartMenyLogik.startMeny(akarListan, sc);				// kör startmenyn
+		StartMenyLogik.startMeny(akarList.getArakeLista(), sc);				// kör startmenyn
 		
 		int lopp = LoppValLogik.forstaLopp(sc);
-		StartNummerLotto.geStartNummer(akarListan);				// lottar ut startnummer
+		StartNummerLotto.geStartNummer(akarList.getArakeLista());				// lottar ut startnummer
 
-		MenyInnanStartLogik.innanstart(akarListan, sc);			// kör menyn innan start
-		LoppLogik.startLopp(akarListan, lopp, akarList);			// starta loppet
+		MenyInnanStartLogik.innanstart(akarList.getArakeLista(), sc);			// kör menyn innan start
+		LoppLogik.startLopp(akarList.getArakeLista(), lopp, akarList);			// starta loppet
 		sc.close();
 	}
 }

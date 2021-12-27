@@ -23,6 +23,7 @@ public class Akare extends Person implements Comparable<Akare>{
 	
 	@Override
 	public String toString() {
+		String startNr = String.format("%02d", this.startNr);
 		return startNr 
 				+ "\t\t" + getFormatedName(super.getfNamn()) 
 				+ "\t\t" + getFormatedName(super.geteNamn()) 
