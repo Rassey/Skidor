@@ -82,7 +82,7 @@ public class IndividuellLogik {
 			
 			for(int j = 0; j<text.toCharArray().length;j++) {
 				try {
-					Thread.sleep(70);
+					Thread.sleep(40);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -91,7 +91,7 @@ public class IndividuellLogik {
 			
 			for (int k = 0; k < 5; k++) {
 				try {
-					Thread.sleep(400);
+					Thread.sleep(120);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

@@ -1,10 +1,7 @@
 package com.yajava.skidor;
 
 import java.util.Scanner;
-
-import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
-import com.yajava.berakning.Individuell;
 import com.yajava.berakning.IndividuellLogik;
 
 public class LoppLogik {

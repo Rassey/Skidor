@@ -1,6 +1,5 @@
 package com.yajava.berakning;
 
-import java.time.Duration;
 import java.time.LocalTime;
 import java.util.Random;
 
@@ -20,23 +19,10 @@ public class TidBerakning {
 		return malTid;
 	}
 	
-	
 	private LocalTime getRandomFinishTime() {
 		Random rnd = new Random();
 		LocalTime outputTime = LocalTime.of( 0, rnd.nextInt(59 - 21), rnd.nextInt(59) );
 		return outputTime;
 	}
 	
-	/**
-	 * duration : the duration between start and finish times
-	 * @return - the method returns a LocalTime object
-	 */
-	public LocalTime calculateTiming(Akare akare) {
-		Duration duration = Duration.between(akare.getStartTid(), akare.getSlutTid());
-		int seconds = duration.toSecondsPart();
-		int minutes = duration.toMinutesPart();
-		int hours = duration.toHoursPart();
-		
-		return LocalTime.of(hours, minutes, seconds);
-	}
 }

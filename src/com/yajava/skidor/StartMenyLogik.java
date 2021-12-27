@@ -51,7 +51,7 @@ public class StartMenyLogik {
 				String fNamn = sc.next();
 				System.out.print("Ange efternamnet:");
 				String eNamn = sc.next();
-				Akare nyAkare = new Akare(fNamn, eNamn, false);
+				Akare nyAkare = new Akare(fNamn, eNamn);
 
 				Akare[] tempArray = Arrays.copyOf(tempAkare, tempAkare.length);
 				tempAkare = Arrays.copyOf(tempArray, tempArray.length + 1);

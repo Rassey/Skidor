@@ -1,6 +1,6 @@
 package com.yajava.akare;
 
-public class Person {
+public abstract class Person {
 	/**
 	 * håller koll på förnamn samt efternamn
 	 */
@@ -13,8 +13,6 @@ public class Person {
 		this.eNamn = eNamn;
 	}
 
-
-
 	public String getfNamn() {
 		return fNamn;
 	}
@@ -22,6 +20,5 @@ public class Person {
 	public String geteNamn() {
 		return eNamn;
 	}
-	
 	
 }

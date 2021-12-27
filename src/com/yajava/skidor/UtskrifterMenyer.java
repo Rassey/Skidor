@@ -1,6 +1,5 @@
 package com.yajava.skidor;
 
-
 public class UtskrifterMenyer {
 
 	public static void startMenyn() {
@@ -18,9 +17,5 @@ public class UtskrifterMenyer {
 	public static void loppStart() {
 		String meny3 = "\n\t[1] Visa Startlista med startnummer" + "\n\t[2] Starta loppet";
 		System.out.println(meny3);
-	}
-
-	public static void Meny4() {
-
 	}
 }

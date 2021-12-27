@@ -14,25 +14,9 @@ public class Akare extends Person implements Comparable<Akare>{
 	private LocalTime startTid;
 	private LocalTime slutTid;
 	private int startNr;
-	// Npc = NonPlayerCaracter
-	private boolean npc;
 
-	public boolean isNpc() {
-		return npc;
-	}
-
-	public void setNpc(boolean npc) {
-		this.npc = npc;
-	}
-
-	public Akare(String fNamn, String eNamn, boolean npc) {
+	public Akare(String fNamn, String eNamn) {
 		super(fNamn, eNamn);
-		this.npc = npc;
-	}
-
-	@Override
-	public String toString() {
-		return "Akare [fNamn=" + super.getfNamn() + ", eNamn=" + super.geteNamn() + ", tid=" + mellanTid + ", startNr=" + startNr + "]";
 	}
 
 	public LocalTime getMellanTid() {
@@ -66,6 +50,11 @@ public class Akare extends Person implements Comparable<Akare>{
 	public void setMellanTid(LocalTime tid) {
 		this.mellanTid = tid;
 	}
+	
+	@Override
+	public String toString() {
+		return "Akare [fNamn=" + super.getfNamn() + ", eNamn=" + super.geteNamn() + ", tid=" + mellanTid + ", startNr=" + startNr + "]";
+	}
 
 	@Override
 	public int hashCode() {
@@ -86,7 +75,9 @@ public class Akare extends Person implements Comparable<Akare>{
 
 	@Override
 	public int compareTo(Akare o) {
-		return this.slutTid.compareTo(o.slutTid);
+		if( this.startNr == o.startNr) return 0;
+		if( this.startNr > o.startNr) return 1;
+		else return -1;
 	}
 
 }
