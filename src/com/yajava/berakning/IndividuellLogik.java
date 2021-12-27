@@ -2,6 +2,8 @@ package com.yajava.berakning;
 
 import java.time.LocalTime;
 import java.util.List;
+
+import com.yajava.Data.AkarList;
 import com.yajava.Utskrifter.OtherPrintOut;
 import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
@@ -16,12 +18,12 @@ public class IndividuellLogik {
 	 * @param akarListan - Array av dom aktuella åkarna
 	 * @return
 	 */
-	public static void loppStart(List<Akare> akarListan) {
+	public static void loppStart(List<Akare> akarListan, AkarList akarList) {
 		mellantid();									 // meny för visa startlista innan mellantid (med sökning av åkare)
 		TidGenerator.generateMellanTid(akarListan);
 		malgang();										// meny visa aktuel placering i loppet / innan målgång (med sökning av åkare)
 		TidGenerator.generateSlutTid(akarListan);
-		PrintOut.visaResultatListan(akarListan); 		// meny efter loppet
+		PrintOut.visaResultatListan(akarListan, akarList); 		// meny efter loppet
 	}
 
 	/**

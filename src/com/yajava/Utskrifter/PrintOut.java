@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import com.yajava.Data.AkarList;
 import com.yajava.akare.Akare;
 
 public class PrintOut {
@@ -24,24 +25,20 @@ public class PrintOut {
 	 * skriver ut resultatet med all information
 	 * @param resultatList - Array av aktuella åkare
 	 */
-	public static void visaResultatListan(List<Akare> akarListan) {
+	public static void visaResultatListan(List<Akare> akarListan, AkarList akarList) {
 		System.out.println("\nSorted acordning to start number\n---------------------------------------");
 		OtherPrintOut.printHeader();
 		Collections.sort(akarListan);
 		akarListan.forEach(akara -> System.out.println(akara));
 		
-		printSortedSluttid(akarListan);  // sortera listan efter sluttiden
+		printSortedSluttid(akarListan, akarList);  // sortera listan efter sluttiden
 	}
 	
-	private static void printSortedSluttid(List<Akare> akarListan) {
+	private static void printSortedSluttid(List<Akare> akarListan, AkarList akarList) {
 		System.out.println("\nSorterad efter sluttid\n----------------------");
 		OtherPrintOut.printHeader();
 		
-		Collections.sort(akarListan, new Comparator<Akare>(){
-            public int compare(Akare e1, Akare e2){
-                return e1.getSlutTid().compareTo(e2.getSlutTid());
-            }
-        });
+		akarList.sortSlutTid(akarListan);
 		
 		akarListan.forEach(x ->{
 			if(akarListan.indexOf(x) == 0) System.out.println(x + " -> Vinnare");

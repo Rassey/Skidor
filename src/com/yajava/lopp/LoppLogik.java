@@ -2,6 +2,7 @@ package com.yajava.lopp;
 
 import java.util.List;
 
+import com.yajava.Data.AkarList;
 import com.yajava.akare.Akare;
 import com.yajava.berakning.IndividuellLogik;
 
@@ -15,7 +16,7 @@ public class LoppLogik {
 	 * @return
 	 */
 
-	public static void startLopp(List<Akare> akarListan, int loppVal) {
+	public static void startLopp(List<Akare> akarListan, int loppVal, AkarList akarList) {
 		
 		switch (loppVal) {
 			case 1 -> {
@@ -23,7 +24,7 @@ public class LoppLogik {
 				}
 			case 2 -> {
 				IndividuellLogik.generateStartTider(akarListan);
-				IndividuellLogik.loppStart(akarListan);
+				IndividuellLogik.loppStart(akarListan, akarList);
 				}
 		}
 	}
