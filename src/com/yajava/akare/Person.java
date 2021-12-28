@@ -1,9 +1,8 @@
 package com.yajava.akare;
 
-public class Person {
+public abstract class Person {
 	
-	private String fNamn;
-	private String eNamn;
+	private String fNamn, eNamn;
 	
 	public Person(String fNamn, String eNamn) {
 		super();
@@ -18,5 +17,4 @@ public class Person {
 	public String geteNamn() {
 		return eNamn;
 	}
-	
 }

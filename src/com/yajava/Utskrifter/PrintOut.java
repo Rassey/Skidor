@@ -1,49 +1,36 @@
 package com.yajava.Utskrifter;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-
 import com.yajava.Data.AkarList;
 import com.yajava.akare.Akare;
 
 public class PrintOut {
 	
-	static char ae = 228, ao = 229, o = 246;
+	static char ae = 228;
 	
-	/**
-	 * skriver ut startlista med startnummer 
-	 * @param akareList - Array av aktuella åkare
-	 */
-	public static void visaStartListan(List<Akare> akarListan) {
+	// skriver ut äkarlistan
+	public static void visaListan(List<Akare> akarListan) {
 		
-		OtherPrintOut.printHeader();
-		akarListan.forEach(akara -> System.out.println(akara));
-	}
-	
-	/**
-	 * skriver ut resultatet med all information
-	 * @param resultatList - Array av aktuella åkare
-	 */
-	public static void visaResultatListan(List<Akare> akarListan, AkarList akarList) {
-		System.out.println("\nSorted acordning to start number\n---------------------------------------");
-		OtherPrintOut.printHeader();
 		Collections.sort(akarListan);
+		OtherPrintOut.printHeader();
 		akarListan.forEach(akara -> System.out.println(akara));
-		
-		printSortedSluttid(akarListan, akarList);  // sortera listan efter sluttiden
 	}
 	
-	private static void printSortedSluttid(List<Akare> akarListan, AkarList akarList) {
-		System.out.println("\nSorterad efter sluttid\n----------------------");
+	// skriver ut resultatet
+	public static void visaResultatListan(AkarList akarList) {
+		
+		Collections.sort(akarList.getArakeLista());						// sortera enligt startnummer
+		System.out.println("\nSorted acordning to start number"
+						 + "\n---------------------------------------");
 		OtherPrintOut.printHeader();
+		visaListan(akarList.getArakeLista());							// skriver ut sorterad listan
 		
-		akarList.sortSlutTid(akarListan);
-		
-		akarListan.forEach(x ->{
-			if(akarListan.indexOf(x) == 0) System.out.println(x + " -> Vinnare");
-			else System.out.println(x);
-		});
+		akarList.sortSlutTid(akarList.getArakeLista());					// sortera enligt sluttid
+		System.out.println("\nSorterad efter sluttid"
+						 + "\n----------------------");
+		OtherPrintOut.printHeader();
+		visaListan(akarList.getArakeLista());							// skriver ut sorterad listan
 	}
 	
 	public static void welcome() {

@@ -3,16 +3,11 @@ package com.yajava.berakning;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 import com.yajava.akare.Akare;
 
 public class StartNummerLotto {
-	/**
-	 * Lottar ut startnummer för åkarna
-	 * 
-	 * @param startNrLottning - Array av dom aktuella åkarna
-	 * @return
-	 */
+	
+	// Lottar ut startnummer för åkarna
 	public static void geStartNummer(List<Akare> akarListan) {
 				
 		Random rnd = new Random();
@@ -42,10 +37,11 @@ public class StartNummerLotto {
 	}
 	
 	private static boolean isUnique(List<Integer> list, int x) {
-		int count = 0;
-		for( int i = 0; i<list.size();i++) {
-			if(list.get(i) == x) count++;
-		}
+		
+		long count = list.stream()
+						 .filter(e -> e == x)
+						 .count();
+		
 		return count <= 1;
 	}
 }

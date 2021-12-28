@@ -5,9 +5,9 @@ public class OtherPrintOut {
 	static char ae = 228, ao = 229, o = 246;
 	
 	public static void printRegistrerade() {
-		System.out.println("Alla " + ao + "kare " + ae 
+		System.out.println("\tAlla " + ao + "kare " + ae 
 						 + "r registrerade, g" + o + "r er redo f" 
-						 + o + "r start\n");
+						 + o + "r start");
 	}
 	
 	public static void printNyAkareRegged() {

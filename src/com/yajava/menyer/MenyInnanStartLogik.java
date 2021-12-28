@@ -10,10 +10,7 @@ import com.yajava.input.InputSafety;
 
 public class MenyInnanStartLogik {
 
-	/**
-	 * Meny samt logik för meny innan lopp
-	 * @param tempAkare - Array av aktuella åkare
-	 */
+	// Meny samt logik för meny innan lopp
 	public static void innanstart(List<Akare> akarListan, Scanner sc) {
 		
 		char o = 246, ae = 228;
@@ -23,8 +20,9 @@ public class MenyInnanStartLogik {
 
 		while (!lopStart) {
 			
-			MenyerSkrivare.loppStart();
-			val = InputSafety.inputInt(sc);
+			MenyerSkrivare.loppStart();							// skriv ut loppmenyn
+			
+			val = InputSafety.inputInt(sc);						// ta emot valen
 			condition = (val < 4 && val > 0) ? true : false;
 			
 			while (!condition) {
@@ -35,7 +33,7 @@ public class MenyInnanStartLogik {
 			}
 
 			switch (val) {
-			case 1 -> PrintOut.visaStartListan(akarListan);
+			case 1 -> PrintOut.visaListan(akarListan);
 			case 2 -> System.out.println("\n\tt" + ae + "vlingen starta snart, g" + o + "r er redo!");
 			case 3 -> System.exit(0);
 			}
