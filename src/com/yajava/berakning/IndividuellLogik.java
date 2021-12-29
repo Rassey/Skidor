@@ -2,7 +2,10 @@ package com.yajava.berakning;
 
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Scanner;
+
 import com.yajava.Data.AkarList;
+import com.yajava.Data.SokAkare;
 import com.yajava.Utskrifter.OtherPrintOut;
 import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
@@ -12,9 +15,10 @@ public class IndividuellLogik {
 	static char ae = 228, ao = 229, o = 246, aO = 197;
 
 	// Logiken för Individuell lopp
-	public static void loppStart(AkarList akarList) {
+	public static void loppStart(AkarList akarList, Scanner sc) {
 		mellantid();									 			// simulera tävlingen 
 		TidGenerator.generateMellanTid(akarList.getArakeLista());	// slumpa mellantiderna
+		SokAkare.sokAkare(akarList.getArakeLista(), sc);
 		malgang();													// simulera tävlingen 
 		TidGenerator.generateSlutTid(akarList.getArakeLista());		// slumpa sluttiderna
 		PrintOut.visaResultatListan(akarList); 						// skriv ut resultatet

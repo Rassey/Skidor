@@ -31,7 +31,7 @@ public class Main {
 		MenyInnanStartLogik.innanstart(akarList.getArakeLista(), sc);		// kör menyn innan start
 		
 		IndividuellLogik.generateStartTider(akarList.getArakeLista());		// få starttider
-		IndividuellLogik.loppStart(akarList);								// starta loppet
+		IndividuellLogik.loppStart(akarList, sc);								// starta loppet
 		SokAkare.sokAkare(akarList.getArakeLista(), sc);
 		sc.close();
 	}
