@@ -19,7 +19,7 @@ public class IndividuellLogik {
 		mellantid();									 			// simulera tävlingen 
 		TidGenerator.generateMellanTid(akarList.getArakeLista());	// slumpa mellantiderna
 		sc.nextLine();
-		sok(akarList, sc);
+		SokAkare.sokAkare(akarList.getArakeLista(), sc);
 		malgang();													// simulera tävlingen 
 		TidGenerator.generateSlutTid(akarList.getArakeLista());		// slumpa sluttiderna
 		PrintOut.visaResultatListan(akarList); 						// skriv ut resultatet
@@ -32,13 +32,6 @@ public class IndividuellLogik {
 			akare.setStartTid(startTime);
 			startTime = startTime.plusSeconds(30);
 		}
-	}
-	
-	private static void sok(AkarList akarList, Scanner sc) {
-		
-		System.out.println("Vill du söka en åkare? y/n");
-		String svar = sc.nextLine();
-		if ( svar.equalsIgnoreCase("y")) SokAkare.sokAkare(akarList.getArakeLista(), sc);		
 	}
 	
 	// simulera tävlingen

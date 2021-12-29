@@ -9,8 +9,12 @@ import com.yajava.input.InputSafety;
 public class SokAkare {
 	public static void sokAkare(List<Akare> arakeLista, Scanner sc ) {
 		
-		System.out.println("\nSök åkare efter startnummer:");
-		System.out.print("Skriv ett startnummer ");
+		System.out.println("\n\tVill du söka en åkare? y/n");
+		String svar = sc.nextLine();
+		if ( !svar.equalsIgnoreCase("y")) return;
+		
+		System.out.println("\n\tSök åkare efter startnummer:");
+		System.out.print("\tSkriv ett startnummer ");
 		int sokStartNr = InputSafety.inputInt(sc);
 		boolean isInLista = false;
 		
@@ -19,7 +23,7 @@ public class SokAkare {
 		}
 		
 		while ( !isInLista) {
-			System.out.println("Fel startnummer försök igen ");
+			System.out.println("\tFel startnummer försök igen ");
 			sokStartNr = InputSafety.inputInt(sc);
 			
 			for ( Akare akare : arakeLista) {
@@ -32,5 +36,6 @@ public class SokAkare {
 		arakeLista.stream()
 					.filter( x -> x.getStartNr() == o)
 					.forEach(System.out::println);
+		System.out.println();
 	}
 }
