@@ -34,29 +34,11 @@ public class MenyInnanStartLogik {
 			switch (val) {
 			case 1 -> PrintOut.visaListan(akarListan);
 			case 2 -> System.out.println("\n\tt" + ae + "vlingen starta snart, g" + o + "r er redo!");
-			//Här ska det gå att söka en åkare
-			case 3 -> {
-				System.out.println("Sök åkare via startnummer");
-				sokAkare(akarListan);
-			}
-			
-			
-			case 4 -> System.exit(0);
+			case 3 -> System.exit(0);
 			}
 			
 			lopStart = val == 2 ? true : false;
 		}
 	}
-	public static void sokAkare(List<Akare> arakeLista) {
-		System.out.println("Sök åkare efter startnummer.");
-		System.out.println("Skriv ett startnummer");
-		Scanner s = new Scanner(System.in);
-		int sokStartNr=s.nextInt();
-		//försök1
-		for (int i = 0; i <arakeLista.size();i++) {
-			if(arakeLista.get(i).getStartNr()==sokStartNr) {
-				System.out.println(arakeLista.get(i));
-			}
-				
-			}}
+
 }

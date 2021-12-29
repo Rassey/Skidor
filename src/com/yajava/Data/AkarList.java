@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Scanner;
-
 import com.yajava.akare.Akare;
 
 public class AkarList implements Sorter{
@@ -31,23 +29,5 @@ public class AkarList implements Sorter{
             }
         });
 	}
-	
-	
-			
-			
-		
-		
-		//försök2
-//		if(arakeLista.contains(sokStartNr)) {
-//			System.out.println("");
-//			
-//		}else {
-//			System.out.println("Det finns ingen registerad åkare med det startnumret");
-//		}
-		
-		
-		
-	
-	
 
 }

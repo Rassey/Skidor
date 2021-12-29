@@ -23,13 +23,11 @@ public class PrintOut {
 		Collections.sort(akarList.getArakeLista());						// sortera enligt startnummer
 		System.out.println("\nSorted acordning to start number"
 						 + "\n---------------------------------------");
-		OtherPrintOut.printHeader();
 		visaListan(akarList.getArakeLista());							// skriver ut sorterad listan
 		
 		akarList.sortSlutTid(akarList.getArakeLista());					// sortera enligt sluttid
 		System.out.println("\nSorterad efter sluttid"
 						 + "\n----------------------");
-		OtherPrintOut.printHeader();
 		visaListan(akarList.getArakeLista());							// skriver ut sorterad listan
 	}
 	

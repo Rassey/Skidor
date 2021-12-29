@@ -18,8 +18,7 @@ public class MenyerSkrivare {
 		
 		menyText = "\n\t[1] Visa Startlista med startnummer" 
 					+ "\n\t[2] Starta loppet" 
-					+ "\n\t[3] Sök åkare via startnummer"
-					+ "\n\t[4] Avsluta programmet";
+					+ "\n\t[3] Avsluta programmet";
 		
 		System.out.println(menyText);
 	}

@@ -2,6 +2,7 @@ package com.yajava.app;
 
 import java.util.Scanner;
 import com.yajava.Data.AkarList;
+import com.yajava.Data.SokAkare;
 import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
 import com.yajava.berakning.IndividuellLogik;
@@ -31,7 +32,7 @@ public class Main {
 		
 		IndividuellLogik.generateStartTider(akarList.getArakeLista());		// få starttider
 		IndividuellLogik.loppStart(akarList);								// starta loppet
-		
+		SokAkare.sokAkare(akarList.getArakeLista(), sc);
 		sc.close();
 	}
 }
