@@ -1,46 +1,52 @@
 package com.yajava.akare;
 
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
-public class Akare extends Person implements Comparable<Akare>{
-	/**
+/**
 	 * Håller kolla på mellanTid, starttid, sluttid samt startnummer
 	 * Stämpeldyan för åkare
-	 * 
 	 */
-
-	private LocalTime mellanTid;
-	private LocalTime startTid;
-	private LocalTime slutTid;
-	private int startNr;
-	// Npc = NonPlayerCaracter
-	private boolean npc;
-
-	public boolean isNpc() {
-		return npc;
-	}
-
-	public void setNpc(boolean npc) {
-		this.npc = npc;
-	}
-
-	public Akare(String fNamn, String eNamn, boolean npc) {
+public class Akare extends Person implements Comparable<Akare>{
+	
+	// konstruktör
+	public Akare(String fNamn, String eNamn) {
 		super(fNamn, eNamn);
-		this.npc = npc;
+		this.dtf = DateTimeFormatter.ofPattern("HH:mm:ss"); // få tid i form av HH:mm:ss
 	}
-
+	
+	private DateTimeFormatter dtf;
+	private LocalTime mellanTid, startTid, slutTid;
+	private int startNr;
+	
 	@Override
 	public String toString() {
-		return "Akare [fNamn=" + super.getfNamn() + ", eNamn=" + super.geteNamn() + ", tid=" + mellanTid + ", startNr=" + startNr + "]";
+		
+		return ((this.startNr == 0) ? " --" : " " + String.format("%02d", this.startNr)) 
+				+ "\t\t" + getFormatedName(super.getfNamn()) 
+				+ "\t\t" + getFormatedName(super.geteNamn()) 
+				+ "\t\t" + getFormatedTime(this.startTid) 
+				+ "\t\t" + getFormatedTime(this.mellanTid)
+				+ "\t\t" + getFormatedTime(this.slutTid);
+	}
+	
+	// formaterar Local strängen enligt dess värde
+	private String getFormatedTime(LocalTime time) {
+		return time == null ? "--:--:--" : time.format(dtf);
+	}
+	
+	// formaterar namnsträngen enligt dess längd
+	private String getFormatedName(String text) {
+		return text.length() <= 7 ? text + "\t" : text;
 	}
 
 	public LocalTime getMellanTid() {
-		return mellanTid;
+		return this.mellanTid;
 	}
 
 	public int getStartNr() {
-		return startNr;
+		return this.startNr;
 	}
 
 	public void setStartNr(int startNr) {
@@ -48,7 +54,7 @@ public class Akare extends Person implements Comparable<Akare>{
 	}
 
 	public LocalTime getStartTid() {
-		return startTid;
+		return this.startTid;
 	}
 
 	public void setStartTid(LocalTime startTid) {
@@ -56,7 +62,7 @@ public class Akare extends Person implements Comparable<Akare>{
 	}
 
 	public LocalTime getSlutTid() {
-		return slutTid;
+		return this.slutTid;
 	}
 
 	public void setSlutTid(LocalTime slutTid) {
@@ -67,9 +73,10 @@ public class Akare extends Person implements Comparable<Akare>{
 		this.mellanTid = tid;
 	}
 
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(slutTid, startNr);
+		return Objects.hash(this.slutTid, this.startNr);
 	}
 
 	@Override
@@ -81,12 +88,19 @@ public class Akare extends Person implements Comparable<Akare>{
 		if (getClass() != obj.getClass())
 			return false;
 		Akare other = (Akare) obj;
-		return Objects.equals(slutTid, other.slutTid) && startNr == other.startNr;
+		return Objects.equals(this.slutTid, other.slutTid) && this.startNr == other.startNr;
 	}
-
+	
+	// jämför startnummer
 	@Override
 	public int compareTo(Akare o) {
-		return this.slutTid.compareTo(o.slutTid);
+		if(this.startNr == o.startNr) {
+			return 0;
+		}else if (this.startNr > o.startNr) {
+			return 1;
+		}else {
+			return -1;
+		}
 	}
-
 }
+

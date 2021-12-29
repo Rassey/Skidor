@@ -1,103 +1,52 @@
 package com.yajava.berakning;
 
 import java.time.LocalTime;
+import java.util.List;
 import java.util.Scanner;
 
+import com.yajava.Data.AkarList;
+import com.yajava.Data.SokAkare;
+import com.yajava.Utskrifter.OtherPrintOut;
 import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
 
 public class IndividuellLogik {
-	private Scanner sc;
-	public IndividuellLogik(Scanner sc) {
-		super();
-		this.sc = sc;
+	
+	static char ae = 228, ao = 229, o = 246, aO = 197;
+
+	// Logiken för Individuell lopp
+	public static void loppStart(AkarList akarList, Scanner sc) {
+		mellantid();									 			// simulera tävlingen 
+		TidGenerator.generateMellanTid(akarList.getArakeLista());	// slumpa mellantiderna
+		sc.nextLine();
+		SokAkare.sokAkare(akarList.getArakeLista(), sc);
+		malgang();													// simulera tävlingen 
+		TidGenerator.generateSlutTid(akarList.getArakeLista());		// slumpa sluttiderna
+		PrintOut.visaResultatListan(akarList); 						// skriv ut resultatet
 	}
-	private Mellantider mellantid = new Mellantider();
-	/**
-	 * Logiken för Individuell lopp
-	 * @param tempAkare - Array av dom aktuella åkarna 
-	 * @return
-	 */
-	public Akare[] loppStart(Akare[] tempAkare) {
-		// meny för visa startlista innan mellantid (med sökning av åkare)
-		mellantid();
-		tempAkare = mellantid.mellanTider(tempAkare);
-		// meny visa aktuel placering i loppet / innan målgång (med sökning av åkare)
-		malgang();
-		tempAkare = mellantid.slutTider(tempAkare);
-		// meny efter loppet
-		PrintOut.visaResultatListan(tempAkare);
-		return tempAkare;
-	}
-	/**
-	 * sätter starttiden för åkarna i startnummer ordning
-	 * @param tempAkare - Array av dom aktuella åkarna
-	 * @return
-	 */
-	public Akare[] startTider(Akare[] tempAkare) {
-		LocalTime startTime = LocalTime.of(0, 0, 0);
-		for(int i = 0 ; i < tempAkare.length; i++) {
-			if (i == 0) {
-				tempAkare[i].setStartTid(startTime);
-			}else {
-				startTime = startTime.plusSeconds(30);
-				tempAkare[i].setStartTid(startTime);
-			}
+
+	// sätter starttiden för åkarna
+	public static void generateStartTider(List<Akare> akarListan) {
+		LocalTime startTime = LocalTime.of( 00, 00, 00 );
+		for( Akare akare : akarListan) {
+			akare.setStartTid(startTime);
+			startTime = startTime.plusSeconds(30);
 		}
-		return tempAkare;
-	}
-	public void mellantid() {
-		System.out.println();
-		call("", true);
-		call("\tLoppet har startat ",false);
-		call("\n\tVi har en åkare som närmar sig första mellantiden ",false);
-	}
-	public void malgang() {
-		
-		call("\tÅkarna närmar sig mållinjen ",false);
-		call("\n\tdet är jämt men vem kommer vinna ",false);
-		call("", true);
-		System.out.println();
 	}
 	
-	/**
-	 * skriver ut loppets gång i en spännande ordning
-	 * @param text - text som matas in i call metoden
-	 * @throws InterruptedException 
-	 */
-	private void call(String text, boolean separator) {
-		if (separator) {
-			System.out.print("\t");
-			for(int i = 0; i < 70; i++) {
-				try {
-					Thread.sleep(10);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				System.out.print('-');
-			}
-			System.out.println();
-		} else {
-			//System.out.print(text);
-			
-			for(int j = 0; j<text.toCharArray().length;j++) {
-				try {
-					Thread.sleep(70);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				System.out.print(text.toCharArray()[j]);
-			}
-			
-			for (int k = 0; k < 5; k++) {
-				try {
-					Thread.sleep(400);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				System.out.print(" ->");
-			}
-			System.out.println();
-		}
+	// simulera tävlingen
+	private static void mellantid() {
+		OtherPrintOut.call("", true);
+		OtherPrintOut.call("\tLoppet har startat ", false);
+		OtherPrintOut.call("\n\tVi har en " + ao + "kare som n" + ae + "rmar sig f" + o + "rsta mellantiden ", false);
 	}
+	
+	// simulera tävlingen
+	private static void malgang() {
+		OtherPrintOut.call("\t" + aO + "karna n" + ae + "rmar sig m" + ao + "llinjen ", false);
+		OtherPrintOut.call("\n\tdet " + ae + "r j" + ae + "mt men vem kommer vinna ", false);
+		OtherPrintOut.call("", true);
+		System.out.println();
+	}
+
 }
