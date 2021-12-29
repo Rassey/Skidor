@@ -17,7 +17,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		AkarList akarList = new AkarList();									// skapa instans
 		
-		// lägg till lite dummy data
+		// lägg till nagra akare i programmet som alltid finns
 		akarList.getArakeLista().add(new Akare("Jack", "Nilsson"));
 		akarList.getArakeLista().add(new Akare("Emil", "Lundqvist"));
 		akarList.getArakeLista().add(new Akare("Nils", "Magnusson"));

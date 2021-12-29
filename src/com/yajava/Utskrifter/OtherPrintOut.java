@@ -1,5 +1,9 @@
 package com.yajava.Utskrifter;
-
+/**
+ * Class för övriga texter som skrivs ut
+ * @author Anna
+ *
+ */
 public class OtherPrintOut {
 	
 	static char ae = 228, ao = 229, o = 246;

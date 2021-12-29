@@ -1,5 +1,9 @@
 package com.yajava.Utskrifter;
-
+/**
+ * Class för menyhantering
+ * @author Anna
+ *
+ */
 public class MenyerSkrivare {
 	
 	static String menyText;

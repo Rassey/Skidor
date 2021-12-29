@@ -4,7 +4,11 @@ import java.util.Collections;
 import java.util.List;
 import com.yajava.Data.AkarList;
 import com.yajava.akare.Akare;
-
+/**
+ * Class som innehåller texter som spelas upp under loppets gång
+ * @author Anna
+ *
+ */
 public class PrintOut {
 	
 	static char ae = 228;

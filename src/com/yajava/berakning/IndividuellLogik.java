@@ -9,9 +9,15 @@ import com.yajava.Data.SokAkare;
 import com.yajava.Utskrifter.OtherPrintOut;
 import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
-
+/**
+ * En klass för inviduellt lopp o dess logik för att genomföras
+ * @author Anna
+ *
+ */
 public class IndividuellLogik {
-	
+	/**
+	 * En char för ascii när man skriver ut text ??
+	 */
 	static char ae = 228, ao = 229, o = 246, aO = 197;
 
 	// Logiken fÃ¶r Individuell lopp

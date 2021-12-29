@@ -1,5 +1,9 @@
 package com.yajava.akare;
-
+/**
+ * En klass som skapar person
+ * @author Anna
+ *
+ */
 public abstract class Person {
 	
 	private String fNamn, eNamn;

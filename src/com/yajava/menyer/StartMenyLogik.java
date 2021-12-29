@@ -14,7 +14,7 @@ public class StartMenyLogik {
 	public static void startMeny(List<Akare> akarListan, Scanner sc) {
 
 		int val = 0;
-		boolean regKlar = false;
+		boolean regKlar = false; //Boolean för att se om registering är gjord
 		
 		while (!regKlar) {
 
@@ -30,7 +30,7 @@ public class StartMenyLogik {
 			switch (val) {
 				case 1 -> nyAkare(akarListan,sc); 					// Registrera ny Ã¥kare
 				case 2 -> PrintOut.visaListan(akarListan); 	// Visa aktuell Ã¥karlista
-				case 3 -> OtherPrintOut.printRegistrerade(); 		// Markera registreringstid som
+				case 3 -> OtherPrintOut.printRegistrerade(); 		// Markera registreringstid som slut
 				case 4 -> System.exit(0);
 			}
 			regKlar = val == 3 ? true : false;

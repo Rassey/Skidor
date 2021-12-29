@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import com.yajava.akare.Akare;
-
+/**
+ * Lottar ut startnummer till alla Âkare n‰r registreringstiden ‰r slut
+ * @author Anna
+ *
+ */
 public class StartNummerLotto {
 	
 	// Lottar ut startnummer f√∂r √•karna

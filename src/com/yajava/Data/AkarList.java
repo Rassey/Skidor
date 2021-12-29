@@ -5,7 +5,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import com.yajava.akare.Akare;
-
+/**
+ * Skapar åkarlistan, samt gör en sortering av deras sluttider
+ * @author Anna
+ *
+ */
 public class AkarList implements Sorter{
 	
 	private List<Akare> arakeLista;

@@ -31,12 +31,22 @@ public class Akare extends Person implements Comparable<Akare>{
 				+ "\t\t" + getFormatedTime(this.slutTid);
 	}
 	
-	// formaterar Local str√§ngen enligt dess v√§rde
+	
+	/**
+	 * formaterar Local str‰ngen enligt dess v‰rde
+	 * @param time
+	 * @return
+	 */
 	private String getFormatedTime(LocalTime time) {
 		return time == null ? "--:--:--" : time.format(dtf);
 	}
 	
-	// formaterar namnstr√§ngen enligt dess l√§ngd
+	
+	/**
+	 * formaterar namnstr‰ngen enligt dess l‰ngd
+	 * @param text
+	 * @return
+	 */
 	private String getFormatedName(String text) {
 		return text.length() <= 7 ? text + "\t" : text;
 	}
@@ -80,6 +90,9 @@ public class Akare extends Person implements Comparable<Akare>{
 	}
 
 	@Override
+	/**
+	 * j‰mfˆr objekt med varandra
+	 */
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -91,7 +104,7 @@ public class Akare extends Person implements Comparable<Akare>{
 		return Objects.equals(this.slutTid, other.slutTid) && this.startNr == other.startNr;
 	}
 	
-	// j√§mf√∂r startnummer
+	// j‰mfˆr startnummer
 	@Override
 	public int compareTo(Akare o) {
 		if(this.startNr == o.startNr) {
