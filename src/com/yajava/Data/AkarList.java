@@ -24,12 +24,12 @@ public class AkarList implements Sortering{
 		return arakeLista;
 	}
 	
-	// sorterar enligt slutTid (interface: Sorter)
+	// sorterar enligt differenstid (interface: Sortering)
 	@Override
-	public void sortSlutTid(List<Akare> akarListan) {
+	public void sortAktid(List<Akare> akarListan) {
 		Collections.sort(akarListan, new Comparator<Akare>(){
             public int compare(Akare e1, Akare e2){
-                return e1.getSlutTid().compareTo(e2.getSlutTid());
+                return e1.getDiffTid().compareTo(e2.getDiffTid());
             }
         });
 	}

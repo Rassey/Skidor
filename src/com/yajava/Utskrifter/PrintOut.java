@@ -16,9 +16,8 @@ public class PrintOut {
 	// skriver ut äkarlistan
 	public static void visaListan(List<Akare> akarListan) {
 		
-		Collections.sort(akarListan);
 		OtherPrintOut.printHeader();
-		akarListan.forEach(akara -> System.out.println(akara));
+		akarListan.forEach(akare -> System.out.println(akare));
 	}
 	
 	// skriver ut resultatet
@@ -29,7 +28,7 @@ public class PrintOut {
 						 + "\n---------------------------------------");
 		visaListan(akarList.getArakeLista());							// skriver ut sorterad listan
 		
-		akarList.sortSlutTid(akarList.getArakeLista());					// sortera enligt sluttid
+		akarList.sortAktid(akarList.getArakeLista());					// sortera enligt sluttid
 		System.out.println("\nSorterad efter sluttid"
 						 + "\n----------------------");
 		visaListan(akarList.getArakeLista());							// skriver ut sorterad listan

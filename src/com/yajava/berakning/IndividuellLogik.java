@@ -1,6 +1,8 @@
 package com.yajava.berakning;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,13 +12,13 @@ import com.yajava.Utskrifter.OtherPrintOut;
 import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
 /**
- * En klass för inviduellt lopp o dess logik för att genomföras
+ * En klass fï¿½r inviduellt lopp o dess logik fï¿½r att genomfï¿½ras
  * @author Anna
  *
  */
 public class IndividuellLogik {
 	/**
-	 * En char för ascii när man skriver ut text ??
+	 * En char fï¿½r ascii nï¿½r man skriver ut text ??
 	 */
 	static char ae = 228, ao = 229, o = 246, aO = 197;
 
@@ -34,6 +36,7 @@ public class IndividuellLogik {
 	// sÃ¤tter starttiden fÃ¶r Ã¥karna
 	public static void generateStartTider(List<Akare> akarListan) {
 		LocalTime startTime = LocalTime.of( 00, 00, 00 );
+		Collections.sort(akarListan);
 		for( Akare akare : akarListan) {
 			akare.setStartTid(startTime);
 			startTime = startTime.plusSeconds(30);

@@ -9,7 +9,7 @@ import com.yajava.akare.Akare;
  */
 interface Sortering {
 	
-	void sortSlutTid(List<Akare> akarListan);
+	void sortAktid(List<Akare> akarListan);
 
 void test();
 }
