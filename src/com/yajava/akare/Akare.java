@@ -39,7 +39,7 @@ public class Akare extends Person implements Comparable <Akare>{
 	
 	
 	/**
-	 * formaterar LocalTime enligt dess värde
+	 * formaterar LocalTime enligt dess vÃ¤rde
 	 * @param LocalTime
 	 * @return String
 	 */
@@ -49,7 +49,7 @@ public class Akare extends Person implements Comparable <Akare>{
 
 
 	/**
-	 * formaterar namnsträngen enligt dess längd
+	 * formaterar namnstrÃ¤ngen enligt dess lÃ¤ngd
 	 * @param text
 	 * @return
 	 */
@@ -94,7 +94,7 @@ public class Akare extends Person implements Comparable <Akare>{
 	}
 	
 	/**
-	 * Denna metod räknar ut åktiden
+	 * Denna metod rï¿½knar ut Ã¥ktiden
 	 * @return LocalTime
 	 */
 	private LocalTime calculateDiff() {
@@ -127,7 +127,7 @@ public class Akare extends Person implements Comparable <Akare>{
 	}
 
 	/**
-	 * Använder compareTo interfacet för att jämföra startnummer
+	 * Anvï¿½nder compareTo interfacet fÃ¶r att jÃ¤mfÃ¶ra startnummer
 	 * @param o
 	 * @return int
 	 */

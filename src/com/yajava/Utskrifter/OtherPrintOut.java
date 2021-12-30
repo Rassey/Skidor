@@ -1,27 +1,24 @@
 package com.yajava.Utskrifter;
 /**
- * Class f�r �vriga texter som skrivs ut
+ * Class för övriga texter som skrivs ut
  * @author Anna
  *
  */
 public class OtherPrintOut {
 	
-	static char ae = 228, ao = 229, o = 246;
 	
 	public static void printRegistrerade() {
-		System.out.println("\tAlla " + ao + "kare " + ae 
-						 + "r registrerade, g" + o + "r er redo f" 
-						 + o + "r start");
+		System.out.println("\tAlla åkare är registrerade, gör er redo för start");
 	}
 	
 	public static void printNyAkareRegged() {
-		System.out.println("\n\tEn ny " + ao + "kare " + ae + "r nu registrerad.");
+		System.out.println("\n\tEn ny åkare är nu registrerad.");
 		System.out.println("\t``````````````````````````````");
 	}
 	
 	public static void printHeader() {
 		System.out.println("StartNummer" 
-							+ "\t" + "F" + o + "rnamn" 
+							+ "\t" + "Förnamn" 
 							+ "\t\t\t" + "Efternamn" 
 							+ "\t\t" + "Starttid"
 							+ "\t\t" +"mellantid" 
@@ -46,7 +43,6 @@ public class OtherPrintOut {
 			}
 			System.out.println();
 		} else {
-			// System.out.print(text);
 
 			for (int j = 0; j < text.toCharArray().length; j++) {
 				try {

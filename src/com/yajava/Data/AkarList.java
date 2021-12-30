@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import com.yajava.akare.Akare;
 /**
- * Skapar åkarlistan, samt gör en sortering av deras sluttider
+ * Skapar Ã¥karlistan, samt gÃ¶r en sortering av deras sluttider
  * @author Anna
  *
  */

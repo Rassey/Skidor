@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 import com.yajava.akare.Akare;
 /**
- * Lottar ut startnummer till alla åkare när registreringstiden är slut
+ * Lottar ut startnummer till alla ï¿½kare nï¿½r registreringstiden Ã¤r slut
  * @author Anna
  *
  */
