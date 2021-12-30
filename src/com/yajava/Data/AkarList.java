@@ -10,7 +10,7 @@ import com.yajava.akare.Akare;
  * @author Anna
  *
  */
-public class AkarList implements Sorter{
+public class AkarList implements Sortering{
 	
 	private List<Akare> arakeLista;
 	
@@ -32,6 +32,14 @@ public class AkarList implements Sorter{
                 return e1.getSlutTid().compareTo(e2.getSlutTid());
             }
         });
+	}
+/**
+ * Skapar vi en ny typ av sortering
+ */
+	@Override
+	public void test() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
