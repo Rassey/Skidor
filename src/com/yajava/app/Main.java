@@ -18,21 +18,21 @@ public class Main {
 		AkarList akarList = new AkarList();									// skapa instans
 		
 		// lägg till nagra akare i programmet som alltid finns
-		akarList.getArakeLista().add(new Akare("Jack", "Nilsson"));
-		akarList.getArakeLista().add(new Akare("Emil", "Lundqvist"));
-		akarList.getArakeLista().add(new Akare("Nils", "Magnusson"));
-		akarList.getArakeLista().add(new Akare("Björn", "Ojail"));
-		akarList.getArakeLista().add(new Akare("Nicklas", "Rosenblad"));
+		akarList.getAkarLista().add(new Akare("Jack", "Nilsson"));
+		akarList.getAkarLista().add(new Akare("Emil", "Lundqvist"));
+		akarList.getAkarLista().add(new Akare("Nils", "Magnusson"));
+		akarList.getAkarLista().add(new Akare("Björn", "Ojail"));
+		akarList.getAkarLista().add(new Akare("Nicklas", "Rosenblad"));
 		
 		PrintOut.welcome();
-		StartMenyLogik.startMeny(akarList.getArakeLista(), sc);				// kör startmenyn
-		StartNummerLotto.geStartNummer(akarList.getArakeLista());			// lottar ut startnummer
+		StartMenyLogik.startMeny(akarList.getAkarLista(), sc);				// kör startmenyn
+		StartNummerLotto.geStartNummer(akarList.getAkarLista());			// lottar ut startnummer
 
-		MenyInnanStartLogik.innanstart(akarList.getArakeLista(), sc);		// kör menyn innan start
+		MenyInnanStartLogik.innanstart(akarList.getAkarLista(), sc);		// kör menyn innan start
 		
-		IndividuellLogik.generateStartTider(akarList.getArakeLista());		// få starttider
+		IndividuellLogik.generateStartTider(akarList.getAkarLista());		// få starttider
 		IndividuellLogik.loppStart(akarList, sc);								// starta loppet
-		SokAkare.sokAkare(akarList.getArakeLista(), sc);
+		SokAkare.menySokAkare(akarList.getAkarLista(), sc);
 		sc.close();
 	}
 }

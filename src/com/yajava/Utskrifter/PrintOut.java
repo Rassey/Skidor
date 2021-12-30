@@ -22,15 +22,15 @@ public class PrintOut {
 	// skriver ut resultatet
 	public static void visaResultatListan(AkarList akarList) {
 		
-		Collections.sort(akarList.getArakeLista());						// sortera enligt startnummer
+		Collections.sort(akarList.getAkarLista());						// sortera enligt startnummer
 		System.out.println("\nSorterar efter startnummer"
 						 + "\n---------------------------------------");
-		visaListan(akarList.getArakeLista());							// skriver ut sorterad listan
+		visaListan(akarList.getAkarLista());							// skriver ut sorterad listan
 		
-		akarList.sortAktid(akarList.getArakeLista());					// sortera enligt sluttid
+		akarList.sortAktid(akarList.getAkarLista());					// sortera enligt sluttid
 		System.out.println("\nSorterad efter sluttid"
 						 + "\n----------------------");
-		visaListan(akarList.getArakeLista());							// skriver ut sorterad listan
+		visaListan(akarList.getAkarLista());							// skriver ut sorterad listan
 	}
 	
 	public static void welcome() {

@@ -20,7 +20,7 @@ public class AkarList implements Sortering{
 	}
 	 
 	 // getter
-	public List<Akare> getArakeLista() {
+	public List<Akare> getAkarLista() {
 		return arakeLista;
 	}
 	

@@ -22,11 +22,11 @@ public class IndividuellLogik {
 	// Logiken för Individuell lopp
 	public static void loppStart(AkarList akarList, Scanner sc) {
 		mellantid();									 			// simulera tävlingen 
-		TidGenerator.generateMellanTid(akarList.getArakeLista());	// slumpa mellantiderna
+		TidGenerator.generateMellanTid(akarList.getAkarLista());	// slumpa mellantiderna
 		sc.nextLine();
-		SokAkare.sokAkare(akarList.getArakeLista(), sc);
+		SokAkare.menySokAkare(akarList.getAkarLista(), sc);
 		malgang();													// simulera tävlingen 
-		TidGenerator.generateSlutTid(akarList.getArakeLista());		// slumpa sluttiderna
+		TidGenerator.generateSlutTid(akarList.getAkarLista());		// slumpa sluttiderna
 		PrintOut.visaResultatListan(akarList); 						// skriv ut resultatet
 	}
 
