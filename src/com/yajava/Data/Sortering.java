@@ -3,7 +3,7 @@ package com.yajava.Data;
 import java.util.List;
 import com.yajava.akare.Akare;
 /**
- * interface för sortering
+ * interface fÃ¶r sortering
  * @author Anna
  *
  */

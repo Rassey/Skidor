@@ -1,6 +1,6 @@
 package com.yajava.Utskrifter;
 /**
- * Class f�r menyhantering
+ * Class för menyhantering
  * @author Anna
  *
  */
@@ -9,8 +9,8 @@ public class MenyerSkrivare {
 	static String menyText;
 	
 	public static void startMenyn() {
-		char ao = 229;
-		menyText = "\n\t[1] Registrera ny " + ao + "kare" 
+		
+		menyText = "\n\t[1] Registrera ny åkare" 
 					+ "\n\t[2] Visa aktuell startlista"
 					+ "\n\t[3] Markera registreringstid som slut" 
 					+ "\n\t[4] Avsluta programmet";

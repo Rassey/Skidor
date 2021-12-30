@@ -6,7 +6,7 @@ import com.yajava.Utskrifter.OtherPrintOut;
 import com.yajava.akare.Akare;
 import com.yajava.input.InputSafety;
 /**
- * En klass som gör det möjligt att söka åkare via startnr och som sedan visar ut aktuell tid. 
+ * En klass som gÃ¶r det mÃ¶jligt att sÃ¶ka Ã¥kare via startnr och som sedan visar ut aktuell tid. 
  * @author Anna
  *
  */

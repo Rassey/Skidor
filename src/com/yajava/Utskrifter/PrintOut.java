@@ -5,15 +5,14 @@ import java.util.List;
 import com.yajava.Data.AkarList;
 import com.yajava.akare.Akare;
 /**
- * Class som inneh�ller texter som spelas upp under loppets g�ng
- * @author Anna
+ * Class som innehåller texter som spelas upp under loppets gång
+ * @author Anna poff
  *
  */
 public class PrintOut {
 	
-	static char ae = 228;
 	
-	// skriver ut äkarlistan
+	// skriver ut åkarlistan
 	public static void visaListan(List<Akare> akarListan) {
 		
 		OtherPrintOut.printHeader();
@@ -24,7 +23,7 @@ public class PrintOut {
 	public static void visaResultatListan(AkarList akarList) {
 		
 		Collections.sort(akarList.getArakeLista());						// sortera enligt startnummer
-		System.out.println("\nSorted acordning to start number"
+		System.out.println("\nSorterar efter startnummer"
 						 + "\n---------------------------------------");
 		visaListan(akarList.getArakeLista());							// skriver ut sorterad listan
 		
@@ -36,7 +35,7 @@ public class PrintOut {
 	
 	public static void welcome() {
 		
-		String text = "V" +ae+ "lkommen till l" + ae + "ngdskidt" + ae + "vling";
+		String text = "Välkommen till längdskidtävling";
 		System.out.print("\n\t");
 		for(int i = 0; i < text.length(); i++) {
 			System.out.print(text.toCharArray()[i]);

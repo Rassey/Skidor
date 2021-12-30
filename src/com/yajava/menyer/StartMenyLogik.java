@@ -14,7 +14,7 @@ public class StartMenyLogik {
 	public static void startMeny(List<Akare> akarListan, Scanner sc) {
 
 		int val = 0;
-		boolean regKlar = false; //Boolean för att se om registering är gjord
+		boolean regKlar = false; //Boolean fÃ¶r att se om registering Ã¤r gjord
 		
 		while (!regKlar) {
 
