@@ -3,6 +3,7 @@ package com.yajava.menyer;
 import java.util.List;
 import java.util.Scanner;
 import com.yajava.Utskrifter.PrintOut;
+import com.yajava.Data.AkarList;
 import com.yajava.Utskrifter.MenyerSkrivare;
 import com.yajava.Utskrifter.OtherPrintOut;
 import com.yajava.akare.Akare;
@@ -11,7 +12,7 @@ import com.yajava.input.InputSafety;
 public class StartMenyLogik {
 	
 	// Skriver ut startmenyn samt kör dess logik
-	public static void startMeny(List<Akare> akarListan, Scanner sc) {
+	public static void startMeny(AkarList akarList, Scanner sc) {
 
 		int val = 0;
 		boolean regKlar = false; //Boolean för att se om registering är gjord
@@ -28,8 +29,8 @@ public class StartMenyLogik {
 			}
 
 			switch (val) {
-				case 1 -> nyAkare(akarListan,sc); 					// Registrera ny åkare
-				case 2 -> PrintOut.visaListan(akarListan); 	// Visa aktuell åkarlista
+				case 1 -> nyAkare(akarList.getAkarLista(),sc); 					// Registrera ny åkare
+				case 2 -> PrintOut.visaListanInnanLopp(akarList); 	// Visa aktuell åkarlista
 				case 3 -> OtherPrintOut.printRegistrerade(); 		// Markera registreringstid som slut
 				case 4 -> System.exit(0);
 			}

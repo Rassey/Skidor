@@ -1,8 +1,6 @@
 package com.yajava.berakning;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -24,7 +22,7 @@ public class IndividuellLogik {
 		mellantid();									 			// simulera tävlingen 
 		TidGenerator.generateMellanTid(akarList.getAkarLista());	// slumpa mellantiderna
 		sc.nextLine();
-		SokAkare.menySokAkare(akarList.getAkarLista(), sc);
+		SokAkare.menySokAkare(akarList, sc, true);
 		malgang();													// simulera tävlingen 
 		TidGenerator.generateSlutTid(akarList.getAkarLista());		// slumpa sluttiderna
 		PrintOut.visaResultatListan(akarList); 						// skriv ut resultatet
@@ -33,7 +31,6 @@ public class IndividuellLogik {
 	// sätter starttiden för åkarna
 	public static void generateStartTider(List<Akare> akarListan) {
 		LocalTime startTime = LocalTime.of( 00, 00, 00 );
-		Collections.sort(akarListan);
 		for( Akare akare : akarListan) {
 			akare.setStartTid(startTime);
 			startTime = startTime.plusSeconds(30);

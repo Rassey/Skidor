@@ -1,7 +1,4 @@
 package com.yajava.Data;
-
-import java.util.List;
-import com.yajava.akare.Akare;
 /**
  * interface för sortering
  * @author Anna
@@ -9,8 +6,7 @@ import com.yajava.akare.Akare;
  */
 interface Sortering {
 	
-	void sortAktid(List<Akare> akarListan);
-
-void test();
+	void sortAktid();
+	void sortMellan();
+	void sortStartNr();
 }
-

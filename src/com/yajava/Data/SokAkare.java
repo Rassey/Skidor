@@ -1,9 +1,12 @@
 package com.yajava.Data;
 
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import com.yajava.Utskrifter.OtherPrintOut;
+import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
+import com.yajava.berakning.TidRaknare;
 import com.yajava.input.InputSafety;
 
 /**
@@ -14,44 +17,36 @@ import com.yajava.input.InputSafety;
  *
  */
 public class SokAkare {
+
 	/**
 	 * Den här metoden skriver ut menyn för sokAkare
-	 * 
-	 * @param akareLista
+	 * @param akarList
 	 * @param sc
+	 * @param medanLopp true om man söker åkare medan loppet är igång
 	 */
-	public static void menySokAkare(List<Akare> akareLista, Scanner sc) {
+	public static void menySokAkare(AkarList akarList, Scanner sc, boolean medanLopp) {
+		
 		boolean stopp = false;
 		while (!stopp) {
 			System.out.println("\n\tVill du söka efter en åkare? (y/n)");
 			String svar = sc.nextLine();
 			if (svar.equalsIgnoreCase("y")) {
-				sokAkare(akareLista, sc);
+				sokAkare(akarList, sc, medanLopp);
 				sc.nextLine();
 			} else {
 				stopp = true;
 			}
 		}
-
-//		do {
-//			System.out.println("\n\tVill du söka efter en åkare? (y/n)");
-//			String svar = sc.nextLine();
-
-//				
-//			} 
-//			sokAkare(arakeLista, sc);
-//		} while (!stopp);
-
 	}
 
-	private static void sokAkare(List<Akare> arakeLista, Scanner sc) {
+	private static void sokAkare(AkarList akarList, Scanner sc, boolean medanLopp) {
 
 		System.out.println("\n\tSök åkare efter startnummer:");
 		System.out.print("\tSkriv ett startnummer ");
 		int sokStartNr = InputSafety.inputInt(sc);
 		boolean isInLista = false;
 
-		for (Akare akare : arakeLista) {
+		for (Akare akare : akarList.getAkarLista()) {
 			if (akare.getStartNr() == sokStartNr)
 				isInLista = true;
 		}
@@ -60,15 +55,99 @@ public class SokAkare {
 			System.out.println("\tFel startnummer försök igen ");
 			sokStartNr = InputSafety.inputInt(sc);
 
-			for (Akare akare : arakeLista) {
+			for (Akare akare : akarList.getAkarLista()) {
 				if (akare.getStartNr() == sokStartNr)
 					isInLista = true;
 			}
 		}
 
 		final int o = sokStartNr;
-		OtherPrintOut.printHeader();
-		arakeLista.stream().filter(x -> x.getStartNr() == o).forEach(System.out::println);
-		System.out.println();
+		
+		AkarList tempAkarList = new AkarList();	
+		List<Integer> indexer = new ArrayList<>();
+		
+		
+		if ( medanLopp ) {
+			akarList.sortMellan();
+			akarList.getAkarLista().get(0).setDiffTidMedanLopp(LocalTime.of(0, 0, 0));
+			setDiffMedanLopp(akarList, tempAkarList, indexer, o);
+			PrintOut.visaListanMedanLopp(tempAkarList);
+		}else {
+			akarList.sortAktid();
+			akarList.getAkarLista().get(0).setDiffTidEfterLopp(LocalTime.of(0, 0, 0));
+			setDiffEfterLopp(akarList, tempAkarList, indexer, o);
+			PrintOut.visaSokEfterResultat(tempAkarList);
+		}
+		
+		
+	}
+	
+	private static void setDiffMedanLopp(AkarList akarList, AkarList tempAkarList,List<Integer> indexer, int o) {
+		
+		if ( akarList.getAkarLista().get(0).getStartNr() == o) {
+			tempAkarList.getAkarLista().add(akarList.getAkarLista().get(0));
+		}else {
+			
+			for ( int i = 0; i < akarList.getAkarLista().size(); i++) {
+				indexer.add(i);
+				if (akarList.getAkarLista().get(i).getStartNr() == o) break;
+			}
+			
+			for ( Integer k : indexer) {
+				tempAkarList.getAkarLista().add(akarList.getAkarLista().get(k));
+			}
+			
+			for ( int j = 1; j < tempAkarList.getAkarLista().size(); j++ ) {
+				tempAkarList.getAkarLista().get(j).setDiffTidMedanLopp(
+						TidRaknare.getTidSkillnad(tempAkarList.getAkarLista().get(0).getMellanTid(),
+												  tempAkarList.getAkarLista().get(j).getMellanTid()));
+			}
+		}
+	}
+	
+	
+	private static void setDiffEfterLopp(AkarList akarList, AkarList tempAkarList,List<Integer> indexer, int o) {
+		
+		if ( akarList.getAkarLista().get(0).getStartNr() == o) {
+			tempAkarList.getAkarLista().add(akarList.getAkarLista().get(0));
+		}else {
+			
+			for ( int i = 0; i < akarList.getAkarLista().size(); i++) {
+				indexer.add(i);
+				if (akarList.getAkarLista().get(i).getStartNr() == o) break;
+			}
+			
+			for ( Integer k : indexer) {
+				tempAkarList.getAkarLista().add(akarList.getAkarLista().get(k));
+			}
+			
+			
+			// if after loppet
+			for ( int j = 1; j < tempAkarList.getAkarLista().size(); j++ ) {
+				tempAkarList.getAkarLista().get(j).setDiffTidEfterLopp(
+						TidRaknare.getTidSkillnad(tempAkarList.getAkarLista().get(0).getAktid(),
+												  tempAkarList.getAkarLista().get(j).getAktid()));
+			}
+		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

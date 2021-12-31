@@ -13,16 +13,16 @@ public class MenyerSkrivare {
 		menyText = "\n\t[1] Registrera ny åkare" 
 					+ "\n\t[2] Visa aktuell startlista"
 					+ "\n\t[3] Markera registreringstid som slut" 
-					+ "\n\t[4] Avsluta programmet";
+					+ "\n\t[4] Avsluta programmet\n";
 		
 		System.out.println(menyText);
 	}
 
 	public static void loppStart() {
 		
-		menyText = "\n\t[1] Visa Startlista med startnummer" 
+		menyText = "\n\n\t[1] Visa Startlista med startnummer" 
 					+ "\n\t[2] Starta loppet" 
-					+ "\n\t[3] Avsluta programmet";
+					+ "\n\t[3] Avsluta programmet\n";
 		
 		System.out.println(menyText);
 	}

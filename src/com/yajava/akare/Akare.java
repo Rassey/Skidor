@@ -1,41 +1,104 @@
 package com.yajava.akare;
 
 import java.time.LocalTime;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
-import java.time.Duration;
+
+import com.yajava.berakning.TidRaknare;
 
 /**
 	 * Håller kolla på mellanTid, starttid, sluttid samt startnummer
 	 * Stämpeldyan för åkare
 	 */
-public class Akare extends Person implements Comparable <Akare>{
+public class Akare extends Person implements ToStringHantering{
 	
 	// konstruktör
 	public Akare(String fNamn, String eNamn) {
 		super(fNamn, eNamn);
 		this.dtf = DateTimeFormatter.ofPattern("HH:mm:ss"); // få tid i form av HH:mm:ss
-		
-		this.diffTid = calculateDiff();
-		
+		this.startNr = 0;
 	}
 	
+	
+	// diffTidMedanLopp, diffTidEfterLopp används för att jämföra med en annan åkare
+	// aktid är åkarens aktuell åktiden för att 
 	private DateTimeFormatter dtf;
-	private LocalTime mellanTid, startTid, slutTid, diffTid;
+	private LocalTime mellanTid, startTid, slutTid, diffTidMedanLopp, diffTidEfterLopp, aktid;
 	private int startNr;
 	
-	@Override
-	public String toString() {
-		
-		return ((this.startNr == 0) ? " --" : " " + String.format("%02d", this.startNr)) 
-				+ "\t\t" + getFormatedName(super.getfNamn()) 
-				+ "\t\t" + getFormatedName(super.geteNamn()) 
-				+ "\t\t" + getFormatedTime(this.startTid) 
-				+ "\t\t" + getFormatedTime(this.mellanTid)
-				+ "\t\t" + getFormatedTime(this.slutTid)
-				+ "\t\t" + getFormatedTime(calculateDiff());
+	
+	
+	
+	
+	
+	// Getter & Setters
+	
+	public LocalTime getMellanTid() {
+		return mellanTid;
 	}
+
+
+	public void setMellanTid(LocalTime mellanTid) {
+		this.mellanTid = mellanTid;
+	}
+
+
+	public LocalTime getStartTid() {
+		return startTid;
+	}
+
+
+	public void setStartTid(LocalTime startTid) {
+		this.startTid = startTid;
+	}
+
+
+	public LocalTime getSlutTid() {
+		return slutTid;
+	}
+
+
+	public void setSlutTid(LocalTime slutTid) {
+		this.slutTid = slutTid;
+	}
+
+
+	public LocalTime getDiffTidMedanLopp() {
+		return diffTidMedanLopp;
+	}
+
+
+	public void setDiffTidMedanLopp(LocalTime diffTidMedanLopp) {
+		this.diffTidMedanLopp = diffTidMedanLopp;
+	}
+
+
+	public LocalTime getDiffTidEfterLopp() {
+		return diffTidEfterLopp;
+	}
+
+
+	public void setDiffTidEfterLopp(LocalTime diffTidEfterLopp) {
+		this.diffTidEfterLopp = diffTidEfterLopp;
+	}
+
+
+	public LocalTime getAktid() {
+		return TidRaknare.getTidSkillnad(this.startTid, this.slutTid);
+	}
+
+
+	public int getStartNr() {
+		return startNr;
+	}
+
+
+	public void setStartNr(int startNr) {
+		this.startNr = startNr;
+	}
+
+
+	
 	
 	
 	/**
@@ -43,70 +106,26 @@ public class Akare extends Person implements Comparable <Akare>{
 	 * @param LocalTime
 	 * @return String
 	 */
-	private String getFormatedTime(LocalTime time) {
+	private String formatTime(LocalTime time) {
 		return time == null ? "--:--:--" : time.format(dtf);
 	}
 
 
+	
+	
+	
 	/**
 	 * formaterar namnsträngen enligt dess längd
 	 * @param text
 	 * @return
 	 */
-	private String getFormatedName(String text) {
+	private String formatName(String text) {
 		return text.length() <= 7 ? text + "\t" : text;
 	}
 
-	public LocalTime getMellanTid() {
-		return this.mellanTid;
-	}
-
-	public int getStartNr() {
-		return this.startNr;
-	}
-
-	public void setStartNr(int startNr) {
-		this.startNr = startNr;
-	}
-
-	public LocalTime getStartTid() {
-		return this.startTid;
-	}
-
-	public void setStartTid(LocalTime startTid) {
-		this.startTid = startTid;
-	}
-
-	public LocalTime getSlutTid() {
-		return this.slutTid;
-	}
-
-	public void setSlutTid(LocalTime slutTid) {
-		this.slutTid = slutTid;
-	}
-
-	public void setMellanTid(LocalTime tid) {
-		this.mellanTid = tid;
-	}
+		
 	
-	public LocalTime getDiffTid() {
-		return calculateDiff();
-	}
 	
-	/**
-	 * Denna metod r�knar ut åktiden
-	 * @return LocalTime
-	 */
-	private LocalTime calculateDiff() {
-		if(this.startTid==null || this.slutTid==null) {
-			return null;
-		} else {
-			LocalTime tempTid=null;
-			Duration x=Duration.between(startTid, slutTid);
-			tempTid=LocalTime.of(x.toHoursPart(), x.toMinutesPart(), x.toSecondsPart());
-			return tempTid;
-		}
-	}
 	
 	@Override
 	public int hashCode() {
@@ -126,15 +145,51 @@ public class Akare extends Person implements Comparable <Akare>{
 		return startNr == other.startNr;
 	}
 
-	/**
-	 * Anv�nder compareTo interfacet för att jämföra startnummer
-	 * @param o
-	 * @return int
-	 */
+
+	
+	
+	
 	@Override
-	public int compareTo(Akare o) {
-		if(this.startNr == o.startNr) return 0;
-		return (this.startNr > o.startNr)? 1: -1;
+	public String toStringInnanLopp() {
+		return (this.startNr == 0 ? "\t --" : "\t" + String.format("%02d", this.startNr) )
+				+ "\t\t" + formatName(super.getfNamn()) 
+				+ "\t\t" + formatName(super.geteNamn());
+	}
+
+
+	@Override
+	public String toStringMedanLopp() {
+		return String.format("%02d", this.startNr) 
+				+ "\t\t" + formatName(super.getfNamn()) 
+				+ "\t" + formatName(super.geteNamn()) 
+				+ "\t" + formatTime(this.startTid) 
+				+ "\t" + formatTime(this.mellanTid)
+				+ "\t" + formatTime(this.diffTidMedanLopp) + " +";
+	}
+
+
+	@Override
+	public String toStringEfterLopp() {
+		return String.format("%02d", this.startNr) 
+				+ "\t\t" + formatName(super.getfNamn()) 
+				+ "\t" + formatName(super.geteNamn()) 
+				+ "\t" + formatTime(this.startTid) 
+				+ "\t" + formatTime(this.mellanTid)
+				+ "\t" + formatTime(this.slutTid)
+				+ "\t" + formatTime(this.getAktid())
+				+ "\t" + formatTime(this.getDiffTidEfterLopp()) + " +";
+	}
+
+
+	@Override
+	public String toStringEfterLoppNoDiff() {
+		return String.format("%02d", this.startNr) 
+				+ "\t\t" + formatName(super.getfNamn()) 
+				+ "\t" + formatName(super.geteNamn()) 
+				+ "\t" + formatTime(this.startTid) 
+				+ "\t" + formatTime(this.mellanTid)
+				+ "\t" + formatTime(this.slutTid)
+				+ "\t" + formatTime(this.getAktid());
 	}
 }
 

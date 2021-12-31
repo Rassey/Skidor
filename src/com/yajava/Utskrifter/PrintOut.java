@@ -1,9 +1,10 @@
 package com.yajava.Utskrifter;
 
-import java.util.Collections;
-import java.util.List;
+import java.time.LocalTime;
+
 import com.yajava.Data.AkarList;
 import com.yajava.akare.Akare;
+import com.yajava.berakning.TidRaknare;
 /**
  * Class som innehåller texter som spelas upp under loppets gång
  * @author Anna poff
@@ -12,25 +13,65 @@ import com.yajava.akare.Akare;
 public class PrintOut {
 	
 	
-	// skriver ut åkarlistan
-	public static void visaListan(List<Akare> akarListan) {
+	public static void visaListanInnanLopp(AkarList akarList) {
 		
-		OtherPrintOut.printHeader();
-		akarListan.forEach(akare -> System.out.println(akare));
+		OtherPrintOut.printHeaderInnanLopp();
+		akarList.sortStartNr();
+		akarList.getAkarLista().forEach(akare -> System.out.println(akare.toStringInnanLopp()));
+		System.out.println();
 	}
+	
+	public static void visaListanMedanLopp(AkarList akarList) {
+		OtherPrintOut.printHeaderMedanLopp();
+		akarList.sortMellan();
+		akarList.getAkarLista().forEach(akare -> System.out.println(akare.toStringMedanLopp()));
+	}
+	
 	
 	// skriver ut resultatet
 	public static void visaResultatListan(AkarList akarList) {
 		
-		Collections.sort(akarList.getAkarLista());						// sortera enligt startnummer
+		System.out.println("\n");
+		akarList.sortStartNr();												// sortera enligt startnummer
 		System.out.println("\nSorterar efter startnummer"
 						 + "\n---------------------------------------");
-		visaListan(akarList.getAkarLista());							// skriver ut sorterad listan
+		OtherPrintOut.printResultHeaderNoDiff();
 		
-		akarList.sortAktid(akarList.getAkarLista());					// sortera enligt sluttid
-		System.out.println("\nSorterad efter sluttid"
+		akarList.getAkarLista().forEach( akare -> System.out.println( akare.toStringEfterLoppNoDiff() ) );
+		System.out.println("\n");
+		
+		akarList.sortAktid();												// sortera enligt åktiden
+		
+		for ( Akare akare : akarList.getAkarLista()) {
+			if ( akarList.getAkarLista().get(0) == akare ){
+				akare.setDiffTidEfterLopp(LocalTime.of(0, 0, 0));
+			}else {
+				akare.setDiffTidEfterLopp(TidRaknare.getTidSkillnad(akarList.getAkarLista().get(0).getAktid(), akare.getAktid()));
+			}
+		}
+		
+		System.out.println("\nSorterad efter åktiden"
 						 + "\n----------------------");
-		visaListan(akarList.getAkarLista());							// skriver ut sorterad listan
+		OtherPrintOut.printResultHeader();
+		akarList.getAkarLista().forEach( akare -> System.out.println( akare.toStringEfterLopp() ) );
+	}
+	
+	public static void visaSokEfterResultat(AkarList akarList) {
+		
+		System.out.println("\n");
+		
+		for ( Akare akare : akarList.getAkarLista()) {
+			if ( akarList.getAkarLista().get(0) == akare ){
+				akare.setDiffTidEfterLopp(LocalTime.of(0, 0, 0));
+			}else {
+				akare.setDiffTidEfterLopp(TidRaknare.getTidSkillnad(akarList.getAkarLista().get(0).getAktid(), akare.getAktid()));
+			}
+		}
+		
+		System.out.println("\nSorterad efter åktiden"
+				+ "\n----------------------");
+		OtherPrintOut.printResultHeader();
+		akarList.getAkarLista().forEach( akare -> System.out.println( akare.toStringEfterLopp() ) );
 	}
 	
 	public static void welcome() {
@@ -40,7 +81,7 @@ public class PrintOut {
 		for(int i = 0; i < text.length(); i++) {
 			System.out.print(text.toCharArray()[i]);
 			try {
-				Thread.sleep(60);
+				Thread.sleep(0);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -50,7 +91,7 @@ public class PrintOut {
 		for(int i = 0; i < text.length(); i++) {
 			System.out.print('=');
 			try {
-				Thread.sleep(10);
+				Thread.sleep(0);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
