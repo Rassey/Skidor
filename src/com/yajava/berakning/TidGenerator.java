@@ -10,9 +10,17 @@ import com.yajava.akare.Akare;
  */
 public class TidGenerator {
 	
+	/**
+	 * Räknar ut mellantiden beroende på starttiden (mellantid - starttid = ny mellantid)
+	 * @param akarListan
+	 */
 	public static void generateMellanTid(List<Akare> akarListan) {
 		Random rnd = new Random();
-		akarListan.forEach(akare -> akare.setMellanTid(LocalTime.of( 0, rnd.nextInt(59 - 21), rnd.nextInt(59) )));
+		LocalTime tempTid = LocalTime.of( 0, rnd.nextInt(15 + 15), rnd.nextInt(59));
+		akarListan.forEach(akare -> {
+			akare.setMellanTid(TidRaknare.getTidSkillnad(akare.getStartTid(), tempTid));
+		
+		}); 
 	}
 	public static void generateSlutTid(List<Akare> akarListan) {
 		Random rnd = new Random();

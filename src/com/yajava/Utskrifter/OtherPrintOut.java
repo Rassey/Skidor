@@ -51,7 +51,7 @@ public class OtherPrintOut {
 						 + "\t" + "Mellantid" 
 						 + "\t" + "Sluttid" 
 						 + "\t\t" + "Åktid" 
-						 + "\t" + "Differens tid");
+						 + "\t\t" + "Differens tid");
 
 		for (int i = 0; i < 126; i++) {
 			System.out.print('=');

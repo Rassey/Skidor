@@ -25,6 +25,7 @@ public class IndividuellLogik {
 		SokAkare.menySokAkare(akarList, sc, true);
 		malgang();													// simulera tävlingen 
 		TidGenerator.generateSlutTid(akarList.getAkarLista());		// slumpa sluttiderna
+		SokAkare.manuelSetSluttid(akarList, sc);					// sätter ut en sluttid
 		PrintOut.visaResultatListan(akarList); 						// skriv ut resultatet
 	}
 
@@ -51,5 +52,4 @@ public class IndividuellLogik {
 		OtherPrintOut.call("", true);
 		System.out.println();
 	}
-
 }
