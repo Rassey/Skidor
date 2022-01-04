@@ -57,7 +57,7 @@ public class SokAkare {
 				
 				for (Akare akare : akarList.getAkarLista()) {
 					if (akare.getStartNr() == strNr) {
-						akare.setSlutTid(TidGenerator.getRandomLocalTime(1));
+						akare.setSlutTid(TidGenerator.getRandomLocalTime(0,6,59));
 						System.out.println("\tSluttid angiven");
 					}
 				}

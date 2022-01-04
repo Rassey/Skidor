@@ -75,13 +75,17 @@ public class OtherPrintOut {
 	
 	
 	
-	// skriver ut loppets gång i en spännande ordning
+	/**
+	 * skriver ut loppets gång i en spännande ordning
+	 * @param text
+	 * @param separator
+	 */
 	public static void call(String text, boolean separator) {
 		if (separator) {
 			System.out.print("\t");
 			for (int i = 0; i < 70; i++) {
 				try {
-					Thread.sleep(10);
+					Thread.sleep(40);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -101,7 +105,7 @@ public class OtherPrintOut {
 
 			for (int k = 0; k < 5; k++) {
 				try {
-					Thread.sleep(0);
+					Thread.sleep(120);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

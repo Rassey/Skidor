@@ -11,7 +11,7 @@ import com.yajava.akare.Akare;
 public class TidGenerator {
 	
 	/**
-	 * Räknar ut mellantiden beroende på starttiden (mellantid - starttid = ny mellantid)
+	 * Räknar ut mellantiden beroende på starttiden 
 	 * @param akarListan
 	 */
 	public static void generateMellanTid(List<Akare> akarListan) {
@@ -21,12 +21,22 @@ public class TidGenerator {
 		
 		for ( Akare akare : akarListan) {
 			
-			tempTid = getRandomLocalTime(0);
+			tempTid = getRandomLocalTime(0,5,27);
+			
 			mellanTid = adderaTider(akare.getStartTid(), tempTid);
+			while(mellanTid.getMinute()<2) {
+				tempTid = getRandomLocalTime(0,5,27);
+				
+				mellanTid = adderaTider(akare.getStartTid(), tempTid);
+			}
 			akare.setMellanTid(mellanTid);
 		}
 		
 	}
+	/**
+	 * Räknar ut sluttiden
+	 * @param akarListan
+	 */
 	public static void generateSlutTid(List<Akare> akarListan) {
 		
 		LocalTime tempTid = null;
@@ -34,21 +44,38 @@ public class TidGenerator {
 		
 		for ( Akare akare : akarListan) {
 			
-			tempTid = getRandomLocalTime(1);
+			tempTid = getRandomLocalTime(0,23,31);
+			while(tempTid.getMinute()<20) {
+				tempTid = getRandomLocalTime(0,23,31);
+			}
 			slutTid = adderaTider(akare.getMellanTid(), tempTid);
+			while(slutTid.getMinute()<20) {
+				tempTid = getRandomLocalTime(0,23,31);
+				slutTid = adderaTider(akare.getMellanTid(), tempTid);
+			}
 			akare.setSlutTid(slutTid);
 		}
 	}
-	
-	public static LocalTime getRandomLocalTime(int hours) {
+	/**
+	 * För felaktig inmatning samt kontroll för vilka tider som kan finnas
+	 * @param hours
+	 * @return
+	 */
+	public static LocalTime getRandomLocalTime(int hours, int min, int sec) {
 		Random rnd = new Random();
-		if (hours > 24) {
-			System.out.println("Det finns bara 24 timmar om dygnet!!!");
-			hours = 24;
+		if (hours > 24 || min >60 || sec > 60) {
+			min= 5;
+			sec=58;
+			hours = 0;
 		}
-		return LocalTime.of( rnd.nextInt(hours + 1), rnd.nextInt(60), rnd.nextInt(60));
+		return LocalTime.of( rnd.nextInt(hours + 1), rnd.nextInt(min+1), rnd.nextInt(sec+1));
 	}
-	
+	/**
+	 * För att beräkna summan av två tider
+	 * @param target
+	 * @param amountToAdd
+	 * @return
+	 */
 	private static LocalTime adderaTider(LocalTime target, LocalTime amountToAdd) {
 
 		target = target.plusSeconds(amountToAdd.getSecond());
