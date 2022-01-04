@@ -23,7 +23,7 @@ public class StartMenyLogik {
 			val = InputSafety.inputInt(sc);		// ta emot valen
 
 			if ( val < 1 || val > 4 ) {
-				System.out.println("mata bara in 1 - 4 tack!");
+				System.out.println("Mata bara in 1 - 4 tack!");
 				sc.nextLine();
 				val = InputSafety.inputInt(sc);
 			}

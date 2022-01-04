@@ -19,7 +19,7 @@ public class OtherPrintOut {
 	
 	public static void printHeaderInnanLopp() {
 		
-		System.out.println("\n\tStartNummer" 
+		System.out.println("\n\tStartnummer" 
 				+ "\t" + "Förnamn" 
 				+ "\t\t\t" + "Efternamn");
 		System.out.print("\t");
@@ -30,12 +30,12 @@ public class OtherPrintOut {
 	}
 	
 	public static void printHeaderMedanLopp() {
-		System.out.println("\n\nStartNummer" 
+		System.out.println("\n\nStartnummer" 
 						 + "\t" + "Förnamn" 
 						 + "\t\t" + "Efternamn"
 						 + "\t" + "Starttid"
-						 + "\t" + "Mellntid"
-						 + "\t" + "differens tid");
+						 + "\t" + "Mellantid"
+						 + "\t" + "Differens tid");
 		
 		for(int i = 0; i < 93; i++) {
 			System.out.print('=');
@@ -44,14 +44,14 @@ public class OtherPrintOut {
 	}
 
 	public static void printResultHeader() {
-		System.out.println("StartNummer" 
+		System.out.println("Startnummer" 
 						 + "\t" + "Förnamn" 
 						 + "\t\t" + "Efternamn" 
 						 + "\t" + "Starttid" 
-						 + "\t" + "Mellntid" 
+						 + "\t" + "Mellantid" 
 						 + "\t" + "Sluttid" 
-						 + "\t\t" + "Åktidtid" 
-						 + "\t" + "differens tid");
+						 + "\t\t" + "Åktid" 
+						 + "\t" + "Differens tid");
 
 		for (int i = 0; i < 126; i++) {
 			System.out.print('=');
@@ -59,13 +59,13 @@ public class OtherPrintOut {
 		System.out.println();
 	}
 	public static void printResultHeaderNoDiff() {
-		System.out.println("StartNummer" 
+		System.out.println("Startnummer" 
 				+ "\t" + "Förnamn" 
 				+ "\t\t" + "Efternamn" 
 				+ "\t" + "Starttid" 
-				+ "\t" + "Mellntid" 
+				+ "\t" + "Mellantid" 
 				+ "\t" + "Sluttid" 
-				+ "\t\t" + "Åktidtid");
+				+ "\t\t" + "Åktid");
 		
 		for (int i = 0; i < 105; i++) {
 			System.out.print('=');

@@ -52,7 +52,7 @@ public class SokAkare {
 		}
 
 		while (!isInLista) {
-			System.out.println("\tFel startnummer försök igen ");
+			System.out.println("\tFel startnummer, försök igen ");
 			sokStartNr = InputSafety.inputInt(sc);
 
 			for (Akare akare : akarList.getAkarLista()) {

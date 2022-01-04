@@ -25,7 +25,7 @@ public class MenyInnanStartLogik {
 			condition = (val < 4 && val > 0) ? true : false;
 			
 			while (!condition) {
-				System.out.println("mata bara in 1-2 tack!");
+				System.out.println("Mata bara in 1-2 tack!");
 				sc.nextLine();
 				val = InputSafety.inputInt(sc);
 				condition = (val < 4 && val > 0) ? true : false;
@@ -33,7 +33,7 @@ public class MenyInnanStartLogik {
 
 			switch (val) {
 			case 1 -> PrintOut.visaListanInnanLopp(akarList);
-			case 2 -> System.out.println("\n\ttävlingen starta snart, gör er redo!");
+			case 2 -> System.out.println("\n\tTävlingen startar snart, gör er redo!");
 			case 3 -> System.exit(0);
 			}
 			

@@ -20,7 +20,7 @@ public class MenyerSkrivare {
 
 	public static void loppStart() {
 		
-		menyText = "\n\n\t[1] Visa Startlista med startnummer" 
+		menyText = "\n\n\t[1] Visa startlista med startnummer" 
 					+ "\n\t[2] Starta loppet" 
 					+ "\n\t[3] Avsluta programmet\n";
 		

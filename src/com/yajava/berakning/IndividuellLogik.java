@@ -41,13 +41,13 @@ public class IndividuellLogik {
 	private static void mellantid() {
 		OtherPrintOut.call("", true);
 		OtherPrintOut.call("\tLoppet har startat ", false);
-		OtherPrintOut.call("\n\tVi har en åkare som närmar sig första mellantiden ", false);
+		OtherPrintOut.call("\n\tVi har en åkare som närmar sig den första mellantiden ", false);
 	}
 	
 	// simulera tävlingen
 	private static void malgang() {
 		OtherPrintOut.call("\tÅkarna närmar sig mållinjen ", false);
-		OtherPrintOut.call("\n\tdet är jämt men vem kommer vinna ", false);
+		OtherPrintOut.call("\n\tDet är jämt men vem kommer vinna :o ", false);
 		OtherPrintOut.call("", true);
 		System.out.println();
 	}
