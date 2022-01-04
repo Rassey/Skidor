@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import com.yajava.Utskrifter.PrintOut;
 import com.yajava.akare.Akare;
+import com.yajava.berakning.TidGenerator;
 import com.yajava.berakning.TidRaknare;
 import com.yajava.input.InputSafety;
 
@@ -39,37 +40,28 @@ public class SokAkare {
 			}
 		}
 	}
-
+	
+	
 	public static void manuelSetSluttid(AkarList akarList, Scanner sc) {
+		
 		boolean stopp = false;
+		
 		while (!stopp) {
+			
 			System.out.println("\n\tVill du sätta en måltid för en åkare? (y/n)");
 			String svar = sc.nextLine();
+			
 			if (svar.equalsIgnoreCase("y")) {
-				System.out.println("\n\tSkriv ut startnummer: ");
-				int str = InputSafety.inputInt(sc);
-				boolean isInLista = false;
-
+				
+				int strNr = getStartNr(akarList, sc);
+				
 				for (Akare akare : akarList.getAkarLista()) {
-					if (akare.getStartNr() == str)
-						isInLista = true;
-				}
-				while (!isInLista) {
-					System.out.println("\tFel startnummer, försök igen ");
-					str = InputSafety.inputInt(sc);
-
-					for (Akare xakare : akarList.getAkarLista()) {
-						if (xakare.getStartNr() == str)
-							isInLista = true;
-					}
-				}
-				for (Akare xakare : akarList.getAkarLista()) {
-					if (xakare.getStartNr() == str) {
-						xakare.setSlutTid(LocalTime.now());
+					if (akare.getStartNr() == strNr) {
+						akare.setSlutTid(TidGenerator.getRandomLocalTime(1));
 						System.out.println("\tSluttid angiven");
 					}
 				}
-				stopp = false;
+				
 				sc.nextLine();
 			} else {
 				stopp = true;
@@ -77,29 +69,29 @@ public class SokAkare {
 		}
 	}
 
+	private static int getStartNr(AkarList akarList, Scanner sc) {
+		
+		System.out.println("\n\tSkriv ett startnummer: ");
+		int strNr = InputSafety.inputInt(sc);
+		boolean isInLista = finns(akarList, strNr);
+		
+		while (!isInLista) {
+			
+			System.out.println("\tFel startnummer, försök igen ");
+			strNr = InputSafety.inputInt(sc);
+			isInLista = finns(akarList, strNr);
+		}
+		return strNr;
+	}
+	
+	private static boolean finns(AkarList akarList, int strNr) {
+		return akarList.getAkarLista().stream().anyMatch( x -> x.getStartNr() == strNr);
+	}
+
 	private static void sokAkare(AkarList akarList, Scanner sc, boolean medanLopp) {
 
 		System.out.println("\n\tSök åkare efter startnummer:");
-		System.out.print("\tSkriv ett startnummer ");
-		int sokStartNr = InputSafety.inputInt(sc);
-		boolean isInLista = false;
-
-		for (Akare akare : akarList.getAkarLista()) {
-			if (akare.getStartNr() == sokStartNr)
-				isInLista = true;
-		}
-
-		while (!isInLista) {
-			System.out.println("\tFel startnummer, försök igen ");
-			sokStartNr = InputSafety.inputInt(sc);
-
-			for (Akare akare : akarList.getAkarLista()) {
-				if (akare.getStartNr() == sokStartNr)
-					isInLista = true;
-			}
-		}
-
-		final int o = sokStartNr;
+		int sokStartNr = getStartNr(akarList, sc);
 
 		AkarList tempAkarList = new AkarList();
 		List<Integer> indexer = new ArrayList<>();
@@ -107,12 +99,12 @@ public class SokAkare {
 		if (medanLopp) {
 			akarList.sortMellan();
 			akarList.getAkarLista().get(0).setDiffTidMedanLopp(LocalTime.of(0, 0, 0));
-			setDiffMedanLopp(akarList, tempAkarList, indexer, o);
+			setDiffMedanLopp(akarList, tempAkarList, indexer, sokStartNr);
 			PrintOut.visaListanMedanLopp(tempAkarList);
 		} else {
 			akarList.sortAktid();
 			akarList.getAkarLista().get(0).setDiffTidEfterLopp(LocalTime.of(0, 0, 0));
-			setDiffEfterLopp(akarList, tempAkarList, indexer, o);
+			setDiffEfterLopp(akarList, tempAkarList, indexer, sokStartNr);
 			PrintOut.visaSokEfterResultat(tempAkarList);
 		}
 

@@ -15,16 +15,49 @@ public class TidGenerator {
 	 * @param akarListan
 	 */
 	public static void generateMellanTid(List<Akare> akarListan) {
-		Random rnd = new Random();
-		LocalTime tempTid = LocalTime.of( 0, rnd.nextInt(15 + 15), rnd.nextInt(59));
-		akarListan.forEach(akare -> {
-			akare.setMellanTid(TidRaknare.getTidSkillnad(akare.getStartTid(), tempTid));
 		
-		}); 
+		LocalTime tempTid = null;
+		LocalTime mellanTid = null; 
+		
+		for ( Akare akare : akarListan) {
+			
+			tempTid = getRandomLocalTime(0);
+			mellanTid = adderaTider(akare.getStartTid(), tempTid);
+			akare.setMellanTid(mellanTid);
+		}
+		
 	}
 	public static void generateSlutTid(List<Akare> akarListan) {
+		
+		LocalTime tempTid = null;
+		LocalTime slutTid = null; 
+		
+		for ( Akare akare : akarListan) {
+			
+			tempTid = getRandomLocalTime(1);
+			slutTid = adderaTider(akare.getMellanTid(), tempTid);
+			akare.setSlutTid(slutTid);
+		}
+	}
+	
+	public static LocalTime getRandomLocalTime(int hours) {
 		Random rnd = new Random();
-		akarListan.forEach(akare -> akare.setSlutTid(LocalTime.of( 1, rnd.nextInt(59 - 21), rnd.nextInt(59) )));
+		if (hours > 24) {
+			System.out.println("Det finns bara 24 timmar om dygnet!!!");
+			hours = 24;
+		}
+		return LocalTime.of( rnd.nextInt(hours + 1), rnd.nextInt(60), rnd.nextInt(60));
+	}
+	
+	private static LocalTime adderaTider(LocalTime target, LocalTime amountToAdd) {
 
+		target = target.plusSeconds(amountToAdd.getSecond());
+		target = target.plusMinutes(amountToAdd.getMinute());
+		target = target.plusHours(amountToAdd.getHour());
+		return target;
 	}
 }
+
+
+
+

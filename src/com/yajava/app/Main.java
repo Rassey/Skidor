@@ -34,5 +34,6 @@ public class Main {
 		IndividuellLogik.loppStart(akarList, sc);								// starta loppet
 		SokAkare.menySokAkare(akarList, sc, false);
 		sc.close();
+		PrintOut.goodbye();
 	}
 }

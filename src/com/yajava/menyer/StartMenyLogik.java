@@ -32,7 +32,10 @@ public class StartMenyLogik {
 				case 1 -> nyAkare(akarList.getAkarLista(),sc); 					// Registrera ny åkare
 				case 2 -> PrintOut.visaListanInnanLopp(akarList); 	// Visa aktuell åkarlista
 				case 3 -> OtherPrintOut.printRegistrerade(); 		// Markera registreringstid som slut
-				case 4 -> System.exit(0);
+				case 4 -> {
+					PrintOut.goodbye();
+					System.exit(0);
+					}
 			}
 			regKlar = val == 3 ? true : false;
 		}

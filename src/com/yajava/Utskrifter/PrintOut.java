@@ -81,7 +81,7 @@ public class PrintOut {
 		for(int i = 0; i < text.length(); i++) {
 			System.out.print(text.toCharArray()[i]);
 			try {
-				Thread.sleep(0);
+				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -91,7 +91,30 @@ public class PrintOut {
 		for(int i = 0; i < text.length(); i++) {
 			System.out.print('=');
 			try {
-				Thread.sleep(0);
+				Thread.sleep(30);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println();
+	}
+	public static void goodbye() {
+		
+		String text = "Programmet avslutas nu ";
+		System.out.print("\n\t");
+		for(int i = 0; i < text.length(); i++) {
+			System.out.print(text.toCharArray()[i]);
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		for(int i = 0; i < text.length(); i++) {
+			System.out.print('.');
+			try {
+				Thread.sleep(30);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

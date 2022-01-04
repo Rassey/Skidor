@@ -34,7 +34,10 @@ public class MenyInnanStartLogik {
 			switch (val) {
 			case 1 -> PrintOut.visaListanInnanLopp(akarList);
 			case 2 -> System.out.println("\n\tTävlingen startar snart, gör er redo!");
-			case 3 -> System.exit(0);
+			case 3 -> {
+				PrintOut.goodbye();
+				System.exit(0);
+				}
 			}
 			
 			lopStart = val == 2 ? true : false;
