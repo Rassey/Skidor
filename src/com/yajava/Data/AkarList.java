@@ -11,35 +11,48 @@ import com.yajava.akare.Akare;
  *
  */
 public class AkarList implements Sortering{
-	
-	private List<Akare> arakeLista;
-	
+
+	private List<Akare> akarLista;
+
 	// konstruktör
 	 public AkarList() {
-		this.arakeLista = new ArrayList<>();
+		this.akarLista = new ArrayList<>();
 	}
-	 
+
 	 // getter
 	public List<Akare> getAkarLista() {
-		return arakeLista;
+		return akarLista;
 	}
-	
-	// sorterar enligt differenstid (interface: Sortering)
+
 	@Override
-	public void sortAktid(List<Akare> akarListan) {
-		Collections.sort(akarListan, new Comparator<Akare>(){
-            public int compare(Akare e1, Akare e2){
-                return e1.getDiffTid().compareTo(e2.getDiffTid());
+	public void sortAktid() {
+		Collections.sort(this.akarLista, new Comparator<Akare>(){
+            @Override
+			public int compare(Akare e1, Akare e2){
+                return e1.getAktid().compareTo(e2.getAktid());
             }
         });
 	}
-/**
- * Skapar vi en ny typ av sortering
- */
+
 	@Override
-	public void test() {
-		// TODO Auto-generated method stub
-		
+	public void sortMellan() {
+		Collections.sort(this.akarLista, new Comparator<Akare>(){
+            @Override
+			public int compare(Akare e1, Akare e2){
+                return e1.getMellanTid().compareTo(e2.getMellanTid());
+            }
+        });
 	}
 
+	@Override
+	public void sortStartNr() {
+		Collections.sort(this.akarLista, new Comparator<Akare>(){
+            @Override
+			public int compare(Akare e1, Akare e2){
+            	if(e1.getStartNr() == e2.getStartNr()) return 0;
+            	return e1.getStartNr() > e2.getStartNr() ? 1 : -1;
+            }
+        });
+	}
 }
+

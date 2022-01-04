@@ -25,14 +25,14 @@ public class Main {
 		akarList.getAkarLista().add(new Akare("Nicklas", "Rosenblad"));
 		
 		PrintOut.welcome();
-		StartMenyLogik.startMeny(akarList.getAkarLista(), sc);				// kör startmenyn
+		StartMenyLogik.startMeny(akarList, sc);				// kör startmenyn
 		StartNummerLotto.geStartNummer(akarList.getAkarLista());			// lottar ut startnummer
 
-		MenyInnanStartLogik.innanstart(akarList.getAkarLista(), sc);		// kör menyn innan start
+		MenyInnanStartLogik.innanstart(akarList, sc);		// kör menyn innan start
 		
 		IndividuellLogik.generateStartTider(akarList.getAkarLista());		// få starttider
 		IndividuellLogik.loppStart(akarList, sc);								// starta loppet
-		SokAkare.menySokAkare(akarList.getAkarLista(), sc);
+		SokAkare.menySokAkare(akarList, sc, false);
 		sc.close();
 	}
 }

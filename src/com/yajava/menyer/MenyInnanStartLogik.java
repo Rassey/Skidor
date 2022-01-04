@@ -3,6 +3,7 @@ package com.yajava.menyer;
 import java.util.List;
 import java.util.Scanner;
 import com.yajava.Utskrifter.PrintOut;
+import com.yajava.Data.AkarList;
 import com.yajava.Utskrifter.MenyerSkrivare;
 import com.yajava.akare.Akare;
 import com.yajava.input.InputSafety;
@@ -10,7 +11,7 @@ import com.yajava.input.InputSafety;
 public class MenyInnanStartLogik {
 
 	// Meny samt logik för meny innan lopp
-	public static void innanstart(List<Akare> akarListan, Scanner sc) {
+	public static void innanstart(AkarList akarList, Scanner sc) {
 		
 		int val = 0;
 		boolean condition = false;
@@ -31,7 +32,7 @@ public class MenyInnanStartLogik {
 			}
 
 			switch (val) {
-			case 1 -> PrintOut.visaListan(akarListan);
+			case 1 -> PrintOut.visaListanInnanLopp(akarList);
 			case 2 -> System.out.println("\n\ttävlingen starta snart, gör er redo!");
 			case 3 -> System.exit(0);
 			}

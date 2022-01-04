@@ -16,18 +16,64 @@ public class OtherPrintOut {
 		System.out.println("\t``````````````````````````````");
 	}
 	
-	public static void printHeader() {
-		System.out.println("StartNummer" 
-							+ "\t" + "Förnamn" 
-							+ "\t\t\t" + "Efternamn" 
-							+ "\t\t" + "Starttid"
-							+ "\t\t" +"mellantid" 
-							+ "\t\t" + "sluttid");
-		for(int i = 0; i < 120; i++) {
+	
+	public static void printHeaderInnanLopp() {
+		
+		System.out.println("\n\tStartNummer" 
+				+ "\t" + "Förnamn" 
+				+ "\t\t\t" + "Efternamn");
+		System.out.print("\t");
+		for(int i = 0; i < 50; i++) {
 			System.out.print('=');
 		}
 		System.out.println();
 	}
+	
+	public static void printHeaderMedanLopp() {
+		System.out.println("\n\nStartNummer" 
+						 + "\t" + "Förnamn" 
+						 + "\t\t" + "Efternamn"
+						 + "\t" + "Starttid"
+						 + "\t" + "Mellntid"
+						 + "\t" + "differens tid");
+		
+		for(int i = 0; i < 93; i++) {
+			System.out.print('=');
+		}
+		System.out.println();
+	}
+
+	public static void printResultHeader() {
+		System.out.println("StartNummer" 
+						 + "\t" + "Förnamn" 
+						 + "\t\t" + "Efternamn" 
+						 + "\t" + "Starttid" 
+						 + "\t" + "Mellntid" 
+						 + "\t" + "Sluttid" 
+						 + "\t\t" + "Åktidtid" 
+						 + "\t" + "differens tid");
+
+		for (int i = 0; i < 126; i++) {
+			System.out.print('=');
+		}
+		System.out.println();
+	}
+	public static void printResultHeaderNoDiff() {
+		System.out.println("StartNummer" 
+				+ "\t" + "Förnamn" 
+				+ "\t\t" + "Efternamn" 
+				+ "\t" + "Starttid" 
+				+ "\t" + "Mellntid" 
+				+ "\t" + "Sluttid" 
+				+ "\t\t" + "Åktidtid");
+		
+		for (int i = 0; i < 105; i++) {
+			System.out.print('=');
+		}
+		System.out.println();
+	}
+	
+	
 	
 	// skriver ut loppets gång i en spännande ordning
 	public static void call(String text, boolean separator) {
@@ -46,7 +92,7 @@ public class OtherPrintOut {
 
 			for (int j = 0; j < text.toCharArray().length; j++) {
 				try {
-					Thread.sleep(30);
+					Thread.sleep(0);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -55,7 +101,7 @@ public class OtherPrintOut {
 
 			for (int k = 0; k < 5; k++) {
 				try {
-					Thread.sleep(180);
+					Thread.sleep(0);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
