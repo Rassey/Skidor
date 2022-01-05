@@ -1,7 +1,7 @@
 ![](https://github.com/Rassey/Skidor/blob/7eef6c3675695594ddb55d1b6266d23e079b8a6a/img/banner.jpg)
 
 ## Gruppuppgift med skidor och mellantid.
-![](https://img.shields.io/badge/Teamwork-amazing-green) ![](https://img.shields.io/badge/Programming%20language-Java-brightgreen) ![](https://img.shields.io/badge/Amount%20of%20fun-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85-red)
+![](https://img.shields.io/badge/Teamwork_level-Perfection-red?logo=TeamSpeak) ![](https://img.shields.io/badge/Programming_Language-Java-blue?logo=Java) ![](https://img.shields.io/badge/Amount_of_Fun-★★★★★-green?logo=Untappd)
 
 ### Preview
 ![](https://github.com/Rassey/Skidor/blob/readmefix_alex/img/preview.gif)
