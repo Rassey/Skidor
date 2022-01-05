@@ -3,6 +3,9 @@
 
 ## Gruppuppgift med skidor och mellantid.
 
+### Preview
+![](https://github.com/Rassey/Skidor/blob/readmefix_alex/img/preview.gif)
+
 > Hej 
 Här kommer lite svar. Det var högst relevanta frågor. Svaren visar vad som behöver vara med, men om ni sen vill bygga på med länder, klubbar mm, kan ni göra det när ni är klara.
 
