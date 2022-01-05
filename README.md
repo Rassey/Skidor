@@ -54,3 +54,12 @@ MVH
 | ![](https://github.com/Rassey/Skidor/blob/readmefix_alex/img/Alex.png)  | ![](https://github.com/Rassey/Skidor/blob/readmefix_alex/img/Anna.png)  | ![](https://github.com/Rassey/Skidor/blob/readmefix_alex/img/Andreas.png)  | ![](https://github.com/Rassey/Skidor/blob/readmefix_alex/img/Mohamad.png)  |
 | :------------: | :------------: | :------------: | :------------: |
 | [AlexanderEE](https://github.com/AlexanderEE95 "Alexander")  | [Anna](https://github.com/Falafeln "Anna")  | [Andreas](https://github.com/Rassey "Andreas")  | [Mohamad](https://github.com/MohamadOjail "Mohamad")  |
+
+
+
+-----------
+
+
+
+#### attribute to freepik for some vectors that we modified to make our avatars.
+<a href="http://www.freepik.com">Designed by Freepik</a>
