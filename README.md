@@ -48,7 +48,9 @@ Här kommer lite svar. Det var högst relevanta frågor. Svaren visar vad som be
 
 MVH
 ### Fredrik
-=======
-#### Teamet:
-[AlexanderEE](https://github.com/AlexanderEE95 "Alexander"), [Anna](https://github.com/Falafeln "Anna"), [Andreas](https://github.com/Rassey "Andreas"), [Mohamad](https://github.com/MohamadOjail "Mohamad")
+------------
+### Teamet:
 
+| ![](https://github.com/Rassey/Skidor/blob/readmefix_alex/img/Alex.png)  | ![](https://github.com/Rassey/Skidor/blob/readmefix_alex/img/Anna.png)  | ![](https://github.com/Rassey/Skidor/blob/readmefix_alex/img/Andreas.png)  | ![](https://github.com/Rassey/Skidor/blob/readmefix_alex/img/Mohamad.png)  |
+| :------------: | :------------: | :------------: | :------------: |
+| [AlexanderEE](https://github.com/AlexanderEE95 "Alexander")  | [Anna](https://github.com/Falafeln "Anna")  | [Andreas](https://github.com/Rassey "Andreas")  | [Mohamad](https://github.com/MohamadOjail "Mohamad")  |
