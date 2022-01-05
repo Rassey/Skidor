@@ -1,5 +1,4 @@
-# Skidor
-![](https://ya.se/wp-content/uploads/2020/11/ya-logo-blue-bg.svg)
+![](https://github.com/Rassey/Skidor/blob/readmefix_alex/img/banner.jpg)
 
 ## Gruppuppgift med skidor och mellantid.
 
