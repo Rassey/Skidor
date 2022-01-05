@@ -4,29 +4,29 @@
 Gruppuppgift med skidor och mellantid.
 
 Hej 
-H�r kommer lite svar. Det var h�gst relevanta fr�gor. Svaren visar vad som beh�ver vara med, men om ni sen vill bygga p� med l�nder, klubbar mm, kan ni g�ra det n�r ni �r klara.
+Här kommer lite svar. Det var högst relevanta frågor. Svaren visar vad som behöver vara med, men om ni sen vill bygga på med länder, klubbar mm, kan ni göra det när ni är klara.
 
-* ska stafett vara med eller �r det endast vanlig l�ngdskid�kning?
+* ska stafett vara med eller är det endast vanlig längdskidåkning?
 
-Svar: Endast vanlig t�vling
+Svar: Endast vanlig tävling
 
-* ska det g� att s�ka efter damer/m�n/ungdom etc
+* ska det gå att söka efter damer/män/ungdom etc
 
-Svar: Det beh�vs inte. Vill man s�ka p� en mellantid, s� �r det bara intressant mot �vriga i klassen.
+Svar: Det behövs inte. Vill man söka på en mellantid, så är det bara intressant mot övriga i klassen.
 
-* ska man f� upp tabeller och kunna spara tidigare starter
+* ska man få upp tabeller och kunna spara tidigare starter
 
-Svar: Bra �r om man kan skriva ut (p� sk�rmen) startlista och resultatlista
+Svar: Bra är om man kan skriva ut (på skärmen) startlista och resultatlista
 
-* vilka distanser g�ller? B�de f�r hela loppet samt mellantider
+* vilka distanser gäller? Både för hela loppet samt mellantider
 
-Svar: Distanser beh�vs inte f�r en enkel tidtagning.
+Svar: Distanser behövs inte för en enkel tidtagning.
 
-* �r det med km eller miles? 
+* är det med km eller miles? 
 
-Svar: Beh�vs ej
+Svar: Behövs ej
 
-*Vilka personuppgifter p� �kare ska finnas?
+*Vilka personuppgifter på åkare ska finnas?
 
 -fnamn Ja
 
@@ -38,19 +38,19 @@ Svar: Beh�vs ej
 
 -startnummer Ja
 
--har en �kare alltid samma startnummer? Svar: Det �r bra om man n�r man anm�lt �kare, kan g�ra en startnummer lottning. Man anger f�rsta start, intervall mellan �kare och f�rsta startnummer
+-har en åkare alltid samma startnummer? Svar: Det är bra om man när man anmält äkare, kan göra en startnummer lottning. Man anger första start, intervall mellan åkare och första startnummer
 
-* hur m�nga lopp r�knas in sedan tidigare? �r det endast senaste loppet som avg�r eller kan det vara flera? Svar: Bara en t�vling
+* hur många lopp räknas in sedan tidigare? är det endast senaste loppet som avgör eller kan det vara flera? Svar: Bara en tävling
 
-* ska man kunna logga in f�r att anv�nda tj�nsten eller �r det �ppet f�r alla? Svar: Alla som kan starta programmet ska kunna k�ra det. Ingen web ska anv�ndas
+* ska man kunna logga in för att använda tjänsten eller är det öppet för alla? Svar: Alla som kan starta programmet ska kunna köra det. Ingen web ska användas
 
-* ska en tidsdifferens finnas f�r att j�mf�ra vilken aktuell placering �karen har och f�r tidsdiff mellan �kare?
+* ska en tidsdifferens finnas för att jämföra vilken aktuell placering åkaren har och får tidsdiff mellan åkare?
 
-Svar: Om anv�ndaren sl�r in ett startnummer f�r att kolla mellantid, ska placering av de som hittils passerat och tid efter ledaren visas.
+Svar: Om användaren slår in ett startnummer för att kolla mellantid, ska placering av de som hittils passerat och tid efter ledaren visas.
 
-* Hur ska allt sparas? Finns det n�got krav att det ska vara till en fil tillex. ?
+* Hur ska allt sparas? Finns det något krav att det ska vara till en fil tillex. ?
 
-Svar: Det beh�ver inte sparas. Datat lagras endast i minnet. Ni kan bygga ut med lagring om ni �r klara med �vrigt.
+Svar: Det behöver inte sparas. Datat lagras endast i minnet. Ni kan bygga ut med lagring om ni är klara med övrigt.
 
 
 MVH
