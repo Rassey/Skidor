@@ -65,5 +65,4 @@ MVH
 
 
 
-#### attribute to freepik for some vectors that we modified to make our avatars.
-<a href="http://www.freepik.com">Designed by Freepik</a>
+###### attribute to freepik for some vectors that we modified to make our avatars: <a href="http://www.freepik.com">Designed by Freepik</a>
