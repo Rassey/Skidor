@@ -81,7 +81,7 @@ public class PrintOut {
 		for(int i = 0; i < text.length(); i++) {
 			System.out.print(text.toCharArray()[i]);
 			try {
-				Thread.sleep(30);
+				Thread.sleep(60);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -91,7 +91,7 @@ public class PrintOut {
 		for(int i = 0; i < text.length(); i++) {
 			System.out.print('=');
 			try {
-				Thread.sleep(90);
+				Thread.sleep(30);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

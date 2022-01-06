@@ -84,7 +84,12 @@ public class Akare extends Person implements ToStringHantering{
 
 
 	public LocalTime getAktid() {
-		return TidRaknare.getTidSkillnad(this.startTid, this.slutTid);
+		return this.aktid;
+	}
+
+
+	public void setAktid() {
+		this.aktid = TidRaknare.getTidSkillnad(this.startTid, this.slutTid);
 	}
 
 
@@ -163,7 +168,7 @@ public class Akare extends Person implements ToStringHantering{
 				+ "\t\t" + formatName(super.getfNamn()) 
 				+ "\t" + formatName(super.geteNamn()) 
 				+ "\t" + formatTime(this.startTid) 
-				+ "\t" + formatTime(this.getMellanTid())
+				+ "\t" + formatTime(this.mellanTid)
 				+ "\t" + formatTime(this.diffTidMedanLopp) + " +";
 	}
 
@@ -174,10 +179,10 @@ public class Akare extends Person implements ToStringHantering{
 				+ "\t\t" + formatName(super.getfNamn()) 
 				+ "\t" + formatName(super.geteNamn()) 
 				+ "\t" + formatTime(this.startTid) 
-				+ "\t" + formatTime(this.getMellanTid())
-				+ "\t" + formatTime(this.getSlutTid())
-				+ "\t" + formatTime(this.getAktid())
-				+ "\t" + formatTime(this.getDiffTidEfterLopp()) + " +";
+				+ "\t" + formatTime(this.mellanTid)
+				+ "\t" + formatTime(this.slutTid)
+				+ "\t" + formatTime(this.aktid)
+				+ "\t" + formatTime(this.diffTidEfterLopp) + " +";
 	}
 
 
@@ -187,9 +192,9 @@ public class Akare extends Person implements ToStringHantering{
 				+ "\t\t" + formatName(super.getfNamn()) 
 				+ "\t" + formatName(super.geteNamn()) 
 				+ "\t" + formatTime(this.startTid) 
-				+ "\t" + formatTime(this.getMellanTid())
-				+ "\t" + formatTime(this.getSlutTid())
-				+ "\t" + formatTime(this.getAktid());
+				+ "\t" + formatTime(this.mellanTid)
+				+ "\t" + formatTime(this.slutTid)
+				+ "\t" + formatTime(this.aktid);
 	}
 }
 

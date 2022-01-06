@@ -23,11 +23,10 @@ public class TidGenerator {
 			
 			tempTid = getRandomLocalTime(0,5,27);
 			
-			mellanTid = adderaTider(akare.getStartTid(), tempTid);
+			mellanTid = adderaTider(tempTid, akare.getStartTid());
 			while(mellanTid.getMinute()<2) {
 				tempTid = getRandomLocalTime(0,5,27);
-				
-				mellanTid = adderaTider(akare.getStartTid(), tempTid);
+				mellanTid = adderaTider(tempTid, akare.getStartTid());
 			}
 			akare.setMellanTid(mellanTid);
 		}
@@ -45,13 +44,11 @@ public class TidGenerator {
 		for ( Akare akare : akarListan) {
 			
 			tempTid = getRandomLocalTime(0,23,31);
-			while(tempTid.getMinute()<20) {
-				tempTid = getRandomLocalTime(0,23,31);
-			}
-			slutTid = adderaTider(akare.getMellanTid(), tempTid);
+			
+			slutTid = adderaTider(tempTid, akare.getMellanTid());
 			while(slutTid.getMinute()<20) {
 				tempTid = getRandomLocalTime(0,23,31);
-				slutTid = adderaTider(akare.getMellanTid(), tempTid);
+				slutTid = adderaTider(tempTid, akare.getMellanTid());
 			}
 			akare.setSlutTid(slutTid);
 		}
