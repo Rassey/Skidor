@@ -20,10 +20,11 @@ public class StartMenyLogik {
 		while (!regKlar) {
 
 			MenyerSkrivare.startMenyn();		// skriv ut menyn
+			System.out.print("\tDitt val: ");
 			val = InputSafety.inputInt(sc);		// ta emot valen
-
+			System.out.println();
 			if ( val < 1 || val > 4 ) {
-				System.out.println("Mata bara in 1 - 4 tack!");
+				System.out.print("\tMata bara in 1 - 4, försök igen: ");
 				sc.nextLine();
 				val = InputSafety.inputInt(sc);
 			}
@@ -43,9 +44,9 @@ public class StartMenyLogik {
 	
 	// Registrera ny åkare
 	private static void nyAkare(List<Akare> akarListan, Scanner sc) {
-		System.out.print("Ange förnamnet: ");
+		System.out.print("\tAnge förnamnet: ");
 		String fNamn = sc.next();
-		System.out.print("Ange efternamnet: ");
+		System.out.print("\tAnge efternamnet: ");
 		String eNamn = sc.next();
 		
 		akarListan.add(new Akare(fNamn, eNamn));

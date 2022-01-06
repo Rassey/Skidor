@@ -25,6 +25,7 @@ public class IndividuellLogik {
 		SokAkare.menySokAkare(akarList, sc, true);
 		malgang();													// simulera tävlingen 
 		TidGenerator.generateSlutTid(akarList.getAkarLista());		// slumpa sluttiderna
+		akarList.getAkarLista().forEach(x -> x.setAktid());
 		SokAkare.manuelSetSluttid(akarList, sc);					// sätter ut en sluttid
 		PrintOut.visaResultatListan(akarList); 						// skriv ut resultatet
 	}

@@ -19,13 +19,13 @@ public class MenyInnanStartLogik {
 		while (!lopStart) {
 
 			MenyerSkrivare.loppStart(); // skriv ut loppmenyn
-
+			System.out.print("\tDitt val: ");
 			val = InputSafety.inputInt(sc); // ta emot valen
 			condition = (val < 4 && val > 0) ? true : false;
 
 			while (!condition) {
-				System.out.println("Mata bara in 1-3 tack!");
-				sc.nextLine();
+				System.out.print("\tMata bara in 1-3, försök igen: ");
+				//sc.nextLine();
 				val = InputSafety.inputInt(sc);
 				condition = (val < 4 && val > 0) ? true : false;
 			}

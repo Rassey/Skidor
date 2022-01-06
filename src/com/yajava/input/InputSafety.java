@@ -16,7 +16,7 @@ public class InputSafety {
 				i = sc.nextInt();
 				condition = true;
 			} catch (Exception e) {
-				System.out.println("Fel inmatning, försök igen");
+				System.out.print("\tFel inmatning, försök igen: ");
 				condition = false;
 				sc.nextLine();
 			} 

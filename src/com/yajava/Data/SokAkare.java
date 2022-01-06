@@ -30,7 +30,7 @@ public class SokAkare {
 
 		boolean stopp = false;
 		while (!stopp) {
-			System.out.println("\n\tVill du söka efter en åkare? (y/n)");
+			System.out.print("\n\tVill du söka efter en åkare? (y/n) ");
 			String svar = sc.nextLine();
 			if (svar.equalsIgnoreCase("y")) {
 				sokAkare(akarList, sc, medanLopp);
@@ -48,7 +48,7 @@ public class SokAkare {
 		
 		while (!stopp) {
 			
-			System.out.println("\n\tVill du sätta en måltid för en åkare? (y/n)");
+			System.out.print("\n\tVill du sätta en måltid för en åkare? (y/n) ");
 			String svar = sc.nextLine();
 			
 			if (svar.equalsIgnoreCase("y")) {
@@ -57,7 +57,10 @@ public class SokAkare {
 				
 				for (Akare akare : akarList.getAkarLista()) {
 					if (akare.getStartNr() == strNr) {
-						akare.setSlutTid(TidGenerator.getRandomLocalTime(0,6,59));
+						akare.setSlutTid(TidGenerator.getRandomLocalTime(0,23,31));
+						while (akare.getSlutTid().getMinute() < 20) {
+							akare.setSlutTid(TidGenerator.getRandomLocalTime(0,23,31));
+						}
 						System.out.println("\tSluttid angiven");
 					}
 				}
@@ -71,13 +74,13 @@ public class SokAkare {
 
 	private static int getStartNr(AkarList akarList, Scanner sc) {
 		
-		System.out.println("\n\tSkriv ett startnummer: ");
+		System.out.print("\n\tSkriv ett startnummer: ");
 		int strNr = InputSafety.inputInt(sc);
 		boolean isInLista = finns(akarList, strNr);
 		
 		while (!isInLista) {
 			
-			System.out.println("\tFel startnummer, försök igen ");
+			System.out.print("\tFel startnummer, försök igen ");
 			strNr = InputSafety.inputInt(sc);
 			isInLista = finns(akarList, strNr);
 		}
